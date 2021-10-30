@@ -1,0 +1,133 @@
+
+@font-face {
+    font-family: 'AvenirLTStd-Black';
+    src: url('fonts/AvenirLTStd-Black.eot');
+    src: url('fonts/AvenirLTStd-Black?#iefix') format('embedded-opentype'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg#AvenirLTStd-Black') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Book';
+    src: url('fonts/Futura-Book_gdi.eot');
+    src: url('fonts/Futura-Book_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/Futura-Book_gdi.woff') format('woff'), url('fonts/Futura-Book_gdi.ttf') format('truetype'), url('fonts/Futura-Book_gdi.svg#Futura-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'AvenirLT-Medium';
+    src: url('fonts/AvenirLT-Medium_gdi.eot');
+    src: url('fonts/AvenirLT-Medium_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirLT-Medium_gdi.woff') format('woff'), url('fonts/AvenirLT-Medium_gdi.ttf') format('truetype'), url('fonts/AvenirLT-Medium_gdi.svg#AvenirLT-Medium') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('fonts/Avenir-Light_gdi.eot');
+    src: url('fonts/Avenir-Light_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/Avenir-Light_gdi.woff') format('woff'), url('fonts/Avenir-Light_gdi.ttf') format('truetype'), url('fonts/Avenir-Light_gdi.svg#Avenir-Light') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext-Medium';
+    src: url('fonts/AvenirNext-Medium_gdi.eot');
+    src: url('fonts/AvenirNext-Medium_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirNext-Medium_gdi.woff') format('woff'), url('fonts/AvenirNext-Medium_gdi.ttf') format('truetype'), url('fonts/AvenirNext-Medium_gdi.svg#AvenirNext-Medium') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext-Regular';
+    src: url('fonts/AvenirNext-Regular_gdi.eot');
+    src: url('fonts/AvenirNext-Regular_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirNext-Regular_gdi.woff') format('woff'), url('fonts/AvenirNext-Regular_gdi.ttf') format('truetype'), url('fonts/AvenirNext-Regular_gdi.svg#AvenirNext-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'AvenirLT-Book';
+    src: url('fonts/AvenirLT-Book_gdi.eot');
+    src: url('fonts/AvenirLT-Book_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirLT-Book_gdi.woff') format('woff'), url('fonts/AvenirLT-Book_gdi.ttf') format('truetype'), url('fonts/AvenirLT-Book_gdi.svg#AvenirLT-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextCondensed-Regular';
+    src: url('fonts/AvenirNextCondensed-Regular_gdi.eot');
+    src: url('fonts/AvenirNextCondensed-Regular_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirNextCondensed-Regular_gdi.woff') format('woff'), url('fonts/AvenirNextCondensed-Regular_gdi.ttf') format('truetype'), url('fonts/AvenirNextCondensed-Regular_gdi.svg#AvenirNextCondensed-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: condensed;
+    unicode-range: U+000D-25CA;
+}
+
+@font-face {
+    font-family: 'AvenirLT-Roman';
+    src: url('fonts/AvenirLT-Roman_gdi.eot');
+    src: url('fonts/AvenirLT-Roman_gdi.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirLT-Roman_gdi.woff') format('woff'), url('fonts/AvenirLT-Roman_gdi.ttf') format('truetype'), url('fonts/AvenirLT-Roman_gdi.svg#AvenirLT-Roman') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+.product-featured .row{
+    width: 100%;
+    max-width: 100%;
+}
+.product-featured #primary{
+    padding-left: 0;
+    padding-right: 0;
+}
+.product-featured #content{
+    padding-bottom: 0;
+}
+.product-featured footer{
+    background: #69317A;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.product-featured #main{
+    margin-top: 0;
+}
+.product-featured .cart{
+    display: table;
+    clear: both;
+    width: 100%;
+}
+.product-featured .cart .quantity{
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+}
+.product-featured .button.single_add_to_cart_button {
+    background-color: #69317A !important;
+    display: inline-block !important;
+    float: left !important;
+    margin: 0 !important;
+    font-size: 25px !important;
+    text-transform: uppercase;
+    border-radius: 0 !important;
+    padding: 13px 30px 13px 30px !important;
+}
+.product-featured .cart .quantity input{
+    height: 50px;
+    text-align: center;
+}
+.product-featured .first-payment-date{
+    display: none;
+}
+.product-featured .price{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}

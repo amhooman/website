@@ -1,0 +1,623 @@
+body.woocommerce-checkout{
+    background: #fff;
+}
+.checkout_container{
+    max-width: 840px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.woo_checkout_header{
+    background: #f2f2f3;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Gotham-Medium';
+    line-height: normal;
+}
+.checkout_box{
+    background: #f2f2f3;
+    display: block;
+    margin-bottom: 50px;
+}
+.checkout_box_header{
+    background: #3e4247;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Gotham-Book';
+    font-size: 18px;
+    border: 1px solid #3e4247;
+    text-transform: uppercase;
+}
+.checkout_box_content{
+    padding: 20px;
+    border: 1px solid #767474;
+}
+.checkout_box_left, .checkout_box_right{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.checkout_box_border{
+    border-left: 5px dotted #a5a1a3;
+}
+.checkout_box_info{
+    font-size: 18px;
+    font-family: 'Gotham-Book';
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+ul.checkout_options_login{
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+ul.checkout_options_login li{
+    display: inline-block;
+}
+ul.checkout_options_login li a{
+    color: #3e4247;
+    padding: 10px 30px;
+    font-family: 'Gotham-Book';
+    font-size: 16px;
+    border: 1px solid #3e4247;
+}
+.checkout_box_form_login{
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.checkout_coupon {
+    display: block !important;
+}
+.checkout_box input{
+    border: 1px solid #3e4247 !important;
+    background: transparent;
+}
+.checkout_box input::placeholder {
+    color: #3e4247 !important;
+    opacity: 1; /* Firefox */
+}
+
+.checkout_box input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #3e4247 !important;
+}
+
+.checkout_box input::-ms-input-placeholder { /* Microsoft Edge */
+   color: #3e4247 !important;
+}
+.checkout_box_login_title{
+    color: #3e4247;
+    font-family: 'Gotham-Book';
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+}
+body .woocommerce .checkout_btn{
+    border: 1px solid #767474;
+    margin: 0;
+}
+body .woocommerce .checkout_btn.checkout_btn_orange{
+    background: #f26522 !important;
+    color: #fff;
+}
+body .woocommerce .checkout_btn.checkout_btn_transparent{
+    background-color: transparent !important;
+    color: #3e4247;
+}
+.checkout_btn_login{
+    float: right;
+}
+.checkout_box .lost_password a{
+    color: #3e4247;
+    font-family: 'Gotham-Book';
+    font-size: 14px;
+}
+.checkout_box .checkout_coupon{
+    border: none !important;
+    margin: 0 !important;
+}
+.checkout_box #giftcard_code{
+    max-width: 100%;
+}
+.checkout_box .ywgc-enter-code{
+    padding: 20px;
+}
+.woocommerce  #checkout_form_billing .form-row label, .woocommerce #checkout_form_billing .form-row input{
+    width: 50% !important;
+    display: inline-block;
+    font-size: 14px;
+    font-family: 'Gotham-Book';
+}
+.checkout_box table.shop_table{
+    border: none !important;
+    border-radius: 0;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+.checkout_box .woocommerce-checkout-review-order-table thead, .checkout_box .woocommerce-checkout-review-order-table tfoot, .checkout_box .woocommerce-checkout-review-order-table tbody{
+    border: none !important;
+    background: #fff;
+}
+.checkout_box .woocommerce-checkout-review-order-table thead tr, .checkout_box .woocommerce-checkout-review-order-table tfoot tr{
+    background: #fff;
+}
+.woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th{
+    border-top: 1px dotted #a5a1a3 !important;
+    border-bottom: 0 !important;
+    word-break: break-word;
+    min-width: 100px;
+}
+.checkout_box_review{
+    background: #fff;
+    display: block;
+}
+.checkout_box_review_title{
+    font-size: 20px;
+    font-family: 'Gotham-Book';
+    color: #f26522;
+    padding: 15px 12px;
+    border-bottom: 1px dotted #a5a1a3;
+}
+.woocommerce-checkout #payment div.payment_box{
+    background-color: transparent;
+    padding: 0;
+}
+.woocommerce-checkout #payment div.payment_box::before{
+    display: none;
+}
+.checkout_box_review_container{
+    background: #fff;
+    padding: 15px;
+}
+.checkout_box_payment_container{
+    padding-right: 15px;
+}
+.woocommerce-checkout #payment ul.payment_methods{
+    border-bottom: 0;
+}
+
+input[type=checkbox].checkout-css-checkbox {
+    position:absolute; 
+    z-index:-1000; 
+    left:-1000px; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px;
+    padding:0; 
+    border:0;
+}
+
+input[type=checkbox].checkout-css-checkbox + label.checkout-css-label {
+    padding-left:25px;
+    height:20px; 
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:16px;
+    font-family: 'Gotham-Book';
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+input[type=checkbox].checkout-css-checkbox:checked + label.checkout-css-label {
+    background-position: 0 -20px;
+}
+label.checkout-css-label {
+background-image:url('../img/checkout/checkout_checkbox.png');
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+margin: 0;
+}
+
+
+.wc_payment_methods input[type=radio].input-radio {
+    position:absolute; 
+    z-index:-1000; 
+    left:-1000px; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0; 
+    border:0;
+}
+
+.wc_payment_methods input[type=radio].input-radio + label.payment_label{
+    padding-left:25px;
+    height:20px; 
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:16px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+.wc_payment_methods input[type=radio].input-radio:checked + label.payment_label{
+    background-position: 0 -20px;
+}
+.wc_payment_methods label.payment_label {
+background-image:url('../img/checkout/checkout_checkbox.png');
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.checkout_simple_cart_details{
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+.checkout_simple_cart_row{
+    border-bottom: 2px dotted #a5a1a3;
+    display: block;
+    margin-bottom: 10px;
+}
+.checkout_simple_cart_content{
+    padding-left: 200px;
+    position: relative;
+    display: block;
+    min-height: 180px;
+    padding-top: 10px;
+}
+.checkout_simple_cart_content img{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.checkout_simple_cart_title{
+    font-family: 'Gotham-Medium';
+    font-size: 30px;
+    line-height: normal;
+}
+.checkout_simple_cart_bottom{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.checkout_simple_cart_type{
+    color: #00a79d;
+    font-family: "Gotham-Medium";
+    font-size: 25px;
+    display: block;
+}
+.checkout_simple_cart_bottom > div{
+    display: inline-block;
+}
+.checkout_simple_cart_price{
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+}
+
+.checkout_simple_cart_quantity, .checkout_simple_cart_btn{
+    border: 1px solid #a5a1a3;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+    margin-left: 10px;
+}
+.checkout_simple_cart_btn a{
+    color: #3e4247;
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+}
+.checkout_simple_cart_action{
+    float: right;
+}
+.checkout_simple_cart_action > div{
+    display: inline-block;
+}
+.checkout_basket{
+    background: red;
+    padding: 10px 15px 10px 15px;
+    display: inline-block;
+    height: 60px;
+    background: #464c4f;
+}
+li.checkout_basket{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+.checkout_basket a {
+    color: #fff;
+    line-height: 40px;
+    font-size: 16px;
+    vertical-align: middle;
+    font-family: 'Gotham-Book';
+}
+.checkout_basket > div{
+    background: url('../img/checkout/car_count.png') no-repeat;
+    width: 60px;
+    height: 35px;
+    display: inline-block;
+    background-size: contain;
+    margin-right: 15px;
+    color: #fff;
+    vertical-align: middle;
+    position: relative;
+}
+.checkout_basket > div > span{
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-family: 'Gotham-Book';
+    /* background: #f26522; */
+    width: 22px;
+    height: 22px;
+    line-height: 23px;
+    text-align: center;
+}
+#order_review{
+    display: table;
+    width: 100%;
+}
+.gift-certificate, .woocommerce-checkout #coupons_list {
+    padding: 0 !important;
+    margin-top: 0;
+    margin-bottom: 50px !important;
+    border: 1px solid #767474;
+    border-radius: 0;
+    background: #f2f2f3;
+}
+.gift-certificate h3{
+    background: #3e4247;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Gotham-Book';
+    font-size: 18px;
+    border: 1px solid #3e4247;
+    margin: 0;
+    font-size: 0;
+}
+.woocommerce-checkout #coupons_list h3{
+    background: #3e4247;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Gotham-Book';
+    font-size: 18px;
+    border: 1px solid #3e4247;
+    margin: 0;
+}
+.woocommerce-checkout #all_coupon_container{
+    padding: 20px;
+}
+.gift-certificate h3:after {
+    font-size: 18px;
+    content: 'DELIVERY METHOD';
+  }
+.gift-certificate-show-form > p{
+    display: none;
+}
+.gift-certificate-show-form {
+    padding-top: 10px;
+    padding-bottom: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.gift-certificate .form_table{
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0;
+}
+.gift-certificate .show_hide_list{
+    margin: 0;
+    padding: 0;
+}
+.gift-certificate-show-form input[type=radio]{
+    margin-left: 0;
+}
+.gift-certificate input, .gift-certificate textarea{
+    border: 1px solid #3e4247 !important;
+    background: transparent;
+}
+
+.gift-certificate input::placeholder, .gift-certificate textarea::placeholder {
+    color: #3e4247 !important;
+    opacity: 1; /* Firefox */
+}
+
+.gift-certificate input:-ms-input-placeholder, .gift-certificate textarea:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+   color: #3e4247 !important;
+}
+
+.gift-certificate input::-ms-input-placeholder,  .gift-certificate textarea::-ms-input-placeholder{ /* Microsoft Edge */
+   color: #3e4247 !important;
+}
+.gift-certificate ul li{
+    margin-bottom: 10px;
+}
+.gift-certificate li input[type=radio] {
+    position:absolute; 
+    z-index:-1000; 
+    left:-1000px; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0; 
+    border:0;
+}
+
+.gift-certificate li input[type=radio] + label{
+    padding-left:25px;
+    height:20px; 
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:16px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+.gift-certificate li input[type=radio]:checked + label {
+    background-position: 0 -20px;
+}
+.gift-certificate li label {
+    background-image:url('../img/checkout/checkout_checkbox.png');
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.woocommerce-checkout #coupons_list, .woocommerce-cart #coupons_list{
+    display: none !important;
+}
+body.page-template-page-thank-you-gift{
+    background: #fff;
+}
+.thank_you_title{
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Gotham-Bold';
+    line-height: normal;
+    background: #f2f2f3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #39b54a;
+}
+.thank_you_page_container{
+    max-width: 840px;
+    display: block;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.thank_you_page_container h2{
+    text-align: center;
+    line-height: normal;
+    font-size: 35px;
+    font-family: 'Gotham-Book';
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.thank_you_box{
+    background: #f2f2f3;
+    border: 1px solid #767474;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.thank_you_box h3{
+    font-size: 22px;
+    font-family: 'Gotham-Book';
+    line-height: normal;
+    text-align: center;
+    display: block;
+}
+.thank_you_box ul{
+    display: inline-block;
+    margin: 30px auto;
+    padding: 0;
+}
+.thank_you_box ul li{
+    display: inline-block;
+}
+.thank_you_box ul li a{
+    font-size: 40px;
+    margin-left: 20px;
+    color: #a2a8a9;
+}
+.thank_you_box ul li a:hover{
+    color: #f26522;
+}
+.thank_you_action{
+    margin: 30px auto;
+}
+.checkout_cart_load_items{
+    opacity: 0.7;
+}
+.checkout_cart_load_items::after{
+    border: solid 7px #eee;
+    border-bottom-color: #3e4247;
+    border-radius: 50%;
+    content: "";
+    height: 100px;
+    width: 100px;
+    left: 45%;
+    position: absolute;
+    top: 45%;
+    animation: spin 2s linear infinite;
+}
+.checkout_cross_products_sell_row{
+    background: #f2f2f3;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+.checkout_cross_products_sell_row h3{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Gotham-Medium';
+    font-size: 30px;
+    line-height: normal;
+}
+.checkout_cross_products_sell_row .checkout_simple_cart_row{
+    border-bottom: 0;
+    margin-bottom: 30px;
+}
+.checkout_cross_products_sell_row .fa-times{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    color: #77787b;
+    cursor: pointer;
+}
+
+.checkout_payment_info img{
+    display: inline-block;
+}
+.checkout_simple_cart_top_action{
+    display: block;
+    margin-top: 20px;
+}
+a.btn-lock{
+    padding: 10px 30px 10px 40px;
+    background: #f26522;
+    font-size: 20px;
+    position: relative;
+    font-family: 'Gotham-Book';
+    color: #fff;
+    display: inline-block;
+    line-height: normal;
+}
+a.btn-lock:before{
+    content: "\f023";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-size: 20px;
+    display: inline-block;
+}
+body.page-template-page-checkout-new  .woocommerce-message .button {
+    display: none !important;
+}

@@ -1,0 +1,350 @@
+/**
+ * Created by exact on 4/15/2017.
+ */
+jQuery(document).ready(function ($) {
+    $(document).on('click', '.user_watch_overlay', function(e){
+            $(this).remove();
+            $('.user_watch_video').remove();
+    })
+
+    $(document).on('click','.access_denied',function(e){
+        e.preventDefault();
+        alert("Please complete the previous topic");
+    });
+    $(document).foundation();
+
+    if($(".uo_error .login-msg strong").text().length != 0) {
+        //$(".uo_loginForm h2").css('color', '#fe0000');
+        $(".uo_loginForm .login-username input[type='text'], .uo_loginForm .login-password input[type='password']").css('background-color', '#fe0000');
+        $(".uo_loginForm .login-username input[type='text'], .uo_loginForm .login-password input[type='password']").css('color', '#fff');
+    }
+
+    $('#trial_products .product .posted_in a').click(function(e) {
+        e.preventDefault();
+    });
+    $('#trial_products .product_container input[type=checkbox]').click(function() {
+        if($(this).is(':checked')) {
+            $(this).next().addClass('course_selected');
+        } else {
+            $(this).next().removeClass('course_selected');
+        }
+    });
+
+
+    $( ".course_box_header.course_box_red, .course_box_content.course_red_box_overlay" ).click(function() {
+        $( "#all_monthly_member" ).trigger( "click" );
+    });
+
+    $( ".course_box_header.course_box_green , .course_box_content.course_green_box_overlay" ).click(function() {
+        $( "#all_annual_member" ).trigger( "click" );
+    });
+
+    $('#free_trial input[name=payment_plan]').change(function() {
+        $('#free_trial input[name=payment_plan]').parent().parent().css({'opacity':'0.6'}).removeClass('payment_selected');
+        if($('#free_trial input[name=payment_plan]').is(':checked')) {
+            $(this).parent().parent().css({'opacity':'1'}).addClass('payment_selected');
+            $('.multi-form .buttons .submit').removeClass('disabled');
+        } else {
+            $('.multi-form .buttons .submit').addClass('disabled');
+        }
+    });
+
+    $('#user_child-birthday').mask('00/00/0000');
+
+
+    $('.page-template-page-codingcourses .woocommerce ul.products li.product .posted_in a').click(function(e) {
+        e.preventDefault();
+    })
+    $(document).on('click', '#publish_course',function(e){
+        e.preventDefault();
+        var url = $(this).data('url');
+        var self = $(this);
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "html",
+            beforeSend: function(){
+                $('.publish_response').empty();			
+                self.text('Processing...');
+            },
+            success: function(response){	
+                $('.publish_response').html(response);				
+                self.text('I want to publish!');
+            }
+        });
+    });
+
+    
+    function classroomAlert(message){
+        return '<div class="woocommerce-error">'+message+'</div>';
+    }
+    function processClassroomAjax(action, data, form_id){
+        $.ajax({
+                        type: "POST",
+                        url: "/wp-admin/admin-ajax.php",
+                        data: {
+                            action: action,
+                            data: data
+                        },
+                        dataType: "JSON",
+                        beforeSend: function(){
+                            $(form_id).find('.form_message').empty();
+                            $(form_id + '_btn > i').attr('class', 'fa fa-spinner fa-spin');                   
+                        },
+                        success: function(data){	
+                            $(form_id + '_btn > i').attr('class', 'fa fa-angle-right');  				
+                            if(data.success == true){
+                                $(form_id + '_modal').hide();
+                                location.reload();
+                            }else{
+                                var message = classroomAlert(data.errors); 
+                                $(form_id).find('.form_message').html(message);   
+                            }
+                        }
+        });
+    }
+    //add class modal trigger
+    $(document).on('click', '.init_classroom_group', function(e){
+        e.preventDefault();
+        var form_id = '#add_classroom';
+        var group = $(this).data('group');
+        var group_courses = $(this).data('group-courses');
+        var group_name = $(this).data('group-name');
+        if(group_courses.length){
+            var res = group_courses;
+            for (var i = 0; i < res.length; i++) { 
+                var course_id =  res[i];
+                $('#listcoursesSelectBox option[value="'+course_id+'"]').attr("selected", "selected");
+            }
+            jQuery('#listcoursesSelectBox').addSelected('#coursesSelectBox');
+        }else{
+            $('#coursesSelectBox').empty();
+        }
+        $(form_id + '_modal').show();
+        $(form_id).find('input[name="group"]').val(group);
+        $(form_id).find('input[name="classroom_group_name"]').val(group_name);
+    })
+    $(document).on('submit', '#add_classroom', function(e){
+        e.preventDefault();
+        var form_id = '#add_classroom';
+        $('#coursesSelectBox option').prop('selected', true);
+        var data = $(this).serialize();
+        var action = "action_add_classroom";
+        processClassroomAjax(action, data, form_id);  
+    })
+    //add student to the classroom
+    $(document).on('click', '#btn_add_classroom_student', function(e){
+        e.preventDefault();
+        var form_id = '#save_classroom_student';
+        $(form_id + '_modal').show();
+    });
+
+    $(document).on('submit', '#save_classroom_student', function(e){
+        e.preventDefault();
+        var form_id = '#save_classroom_student';
+        var data = $(this).serialize();
+        var action = "action_save_classroom_student";
+        processClassroomAjax(action, data, form_id);  
+    })
+
+    //update password
+    $(document).on('click', '.classroom-change-password', function(e){
+        e.preventDefault();
+        var form_id = '#save_classroom_student_password';
+        var user = $(this).data('user');
+
+        $(form_id + '_modal').show();
+        $(form_id + '_modal').find('input[name="user"]').val(user);
+    })
+    $(document).on('submit', '#save_classroom_student_password', function(e){
+        e.preventDefault();
+        var form_id = '#save_classroom_student_password';
+        var data = $(this).serialize();
+        var action = "action_save_classroom_student_password";
+        processClassroomAjax(action, data, form_id);        
+    })
+     //edit student
+     $(document).on('click', '.edit_classroom_student', function(e){
+        e.preventDefault();
+        var form_id = '#edit_classroom_student';
+        var user = $(this).data('user');
+        var firstname = $(this).data('firstname');
+        var lastname = $(this).data('lastname');
+        // var username = $(this).data('username');
+
+        $(form_id + '_modal').show();
+        $(form_id + '_modal').find('input[name="user"]').val(user);
+        $(form_id + '_modal').find('input[name="firstname"]').val(firstname);
+        $(form_id + '_modal').find('input[name="lastname"]').val(lastname);
+        // $(form_id + '_modal').find('input[name="username"]').val(username);
+    })
+
+    $(document).on('submit', '#edit_classroom_student', function(e){
+        e.preventDefault();
+        var form_id = '#edit_classroom_student';
+        var data = $(this).serialize();
+        var action = "action_edit_classroom_student";
+        processClassroomAjax(action, data, form_id);  
+    })
+    //add student to the classroom using import
+    $(document).on('click', '#btn_import_classroom_student', function(e){
+        e.preventDefault();
+        var form_id = '#import_classroom_student';
+        $(form_id + '_modal').show();
+    });
+    $(document).on('submit','#import_classroom_student',function(e){
+        e.preventDefault();
+        var form_id = '#import_classroom_student';
+        var action = 'action_import_users_classroom';
+        var form_data = new FormData(this);
+            form_data.append('action', action);
+        $.ajax({
+            type: "POST",
+            url: "/wp-admin/admin-ajax.php",
+            data: form_data,
+            dataType: "JSON",
+            // async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function(){
+                $(form_id).find('.form_message').empty();
+                $(form_id + '_btn > i').attr('class', 'fa fa-spinner fa-spin');  
+            },
+            success: function(data){   
+                $(form_id + '_btn > i').attr('class', 'fa fa-angle-right');  				
+                if(data.success == true){
+                    $(form_id + '_modal').hide();
+                    location.reload();
+                }else{
+                    var message = '<div class="woocommerce-message">' + data.errors + '</div>'; 
+                    $(form_id).find('.form_message').html(message);   
+                }   
+            }
+          });
+    });
+
+    $(document).on('click', '.classroom-close', function(e){
+        e.preventDefault();
+        $('.classroom-modal').hide();
+    })
+    $(document).on('click', '.import-close', function(e){
+        e.preventDefault();
+        var file = $("#classroom_file_import").val();
+        if(!$('.import_classroom_student .form_message').is(':empty') && file.length ){
+            location.reload();
+        }
+    })
+    $(document).on('change', '#classroom_file_import', function(e){
+        e.preventDefault();
+        var filename = $('input[type=file]').val().split('\\').pop();
+        var fileExtension = filename.replace(/^.*\./, '');        
+        if(fileExtension != 'csv'){
+            $(this).val(null);
+            alert('Extension must be csv');            
+        }else{
+            $('.import_classrrom_upload_filename').text(filename);
+        }
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        var className = $(event.target).attr('class');
+        if (className == 'classroom-modal') {
+            $('.classroom-modal').hide();
+        }
+
+        var postAnchor = $(event.target).closest( ".post-anchor" ),
+            idCourse = postAnchor.attr('id'),
+            existingDiv = '';        
+        
+        var postId = (idCourse || '').replace('modal-', '');
+        if(postId) {
+            existingDiv = document.getElementById("modal-content-" +  postId);
+            // $("#modal-course .modal-body").append( existingDiv );
+            // $("#modal-content-" +  postId).show();
+            // $('#modal-course').show();
+            // setCourseCSS();
+
+            // show loader
+            postAnchor.append('<div class="lds-roller"><div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+
+            //show modal with ajax
+            var action_preview_upgrade = 'action_show_modal_preview_upgrade'
+            $.ajax({
+                type: "POST",
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    action: action_preview_upgrade,
+                    postId: postId
+                },
+                dataType: "html",
+                success: function(content){	
+                    $("#modal-course .modal-body").html(content);
+                    $('#modal-course').show();
+                    setCourseCSS();
+                    update_preview_thumb();
+                    $('#modal-' + postId +  ' .lds-roller').remove();
+                },
+                error: function (request, status, error) {
+                    $('#modal-' + postId +  ' .lds-roller').remove();
+                }
+            });
+
+        }
+       function update_preview_thumb(){
+            // GET request to get the thumbnail of the video
+            var videoSrc = $('#modal-course').find('iframe.video-frame').attr('src');
+            $.ajax({
+                type:'GET',
+                url: 'https://vimeo.com/api/oembed.json?url=' + encodeURIComponent(videoSrc),
+                dataType: 'json',
+                success: function(data) {
+                    $('#modal-course .video-thumb').css('background-image', 'url(' + data.thumbnail_url + ')'); 
+                }
+            });
+        }
+        // close modal
+        if(className == 'close-modal') {
+            stopVideo();
+            $(".video-thumb").css('display', 'flex');
+            $('#modal-course .modal-body .modal-course-content').hide();
+            $('#modal-course').hide();
+        }
+
+        function stopVideo() {
+            var $frame = $('#modal-course').find('iframe.video-frame');
+        
+            // saves the current iframe source
+            var videoSrc = ($frame.attr('src') || '').replace('?autoplay=1&loop=0&autopause=0', '');
+
+            // sets the source to nothing, stopping the video
+            $frame.attr('src', '');
+
+            // sets it back to the correct link so that it reloads immediately on the next window open
+            $frame.attr('src', videoSrc);
+        }
+    }
+
+    jQuery(document).on('click', '.video-thumb',function() {
+        jQuery(this).hide();
+
+        // make video autoplay on click on image
+        var $frame = $('#modal-course').find('iframe.video-frame');
+        var videoSrc = $frame.attr('src') + '?autoplay=1&loop=0&autopause=0';
+        
+        $frame.attr('src', videoSrc);        
+    });
+
+    function setCourseCSS() {
+        // resize the video thumb height
+        var frameHeight = $('.modal-course-content iframe.video-frame').height();
+        $('.modal-course-content .video-thumb').css('height', (frameHeight - 10));
+    }
+
+    jQuery(window).resize(function () { 
+        setCourseCSS();
+    });
+
+});
+

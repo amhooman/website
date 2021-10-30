@@ -7,6 +7,15 @@ body {
     overflow-wrap: break-word;
 }
 
+
+section {
+    background-image: url("..\\Images\\glagges.jpg");
+    background-size: 30% 20%;
+    background-repeat: repeat;
+    min-height: 800px;
+    padding-top: 50px;
+  }
+
 footer {
     text-align: center;
     background-color: #2e3131;

@@ -1,0 +1,661 @@
+.user-guest-content{
+    width: 100%;
+    display: block;
+    position: relative;
+    float: left;
+    padding-top: 60px;
+}
+.guest_container_grey{
+    background: #f2f2f3;
+    padding-top: 30px;
+}
+.guest_start_trial{
+    background: #f0a53a;
+}
+.guest_start_trial .btn_red{
+    background: #ed1c24;
+}
+.schools_program .row{
+    max-width: none;
+}
+.schools_program{
+    display: table;
+    width: 100%;
+    background: #fff;
+}
+.schools_program h2{
+    font-family: "Gotham-Medium";
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.schools_program p{
+    font-family: "Gotham-Book";
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: normal;
+}
+.schools_program .box_info{
+    color: #fff;
+    min-height: 470px;
+    padding-top: 20px;
+}
+.schools_program .box_info .box_image{
+    height: 144px;
+    line-height: 144px;
+}
+.schools_program .box_info .box_title span{
+   display: block;
+   font-family: "Gotham-Medium";
+   font-size: 35px;
+}
+.schools_program .box_info .box_title{
+    line-height: normal;
+    font-family: "Gotham-Medium";
+    font-size: 20px;
+    margin-top: 15px;
+    min-height: 100px;
+}
+.schools_program .box_info .box-content{
+    line-height: normal;
+    font-family: "Gotham-Book";
+    font-size: 18px;
+    margin-top: 20px;
+}
+.schools_program .column_blue{
+    background: #27AAE1;
+}
+.schools_program .column_red{
+    background: #D81E42;
+}
+.schools_program .column_green{
+    background: #7cb7a3;
+}
+.schools_program .column_orange{
+    background: #F0A53A;
+}
+.schools_program .column_pink{
+    background: #7f3f98;
+}
+
+.orange-bg {
+    background-color: #f26522;
+}
+.purple-bg {
+    background-color: #782e7d;
+}
+.school_course_card{
+    display: inline-block;
+    width: 14.2%;
+    float: left;
+    margin: 0;
+    padding: 3px;
+}
+#guest_school_courses{
+    background: url('../images/guest_bg_courses.png') no-repeat;
+    background-size: cover !important;
+}
+#guest_school_courses h2{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+ul.offer_statistic{
+    display: table;
+    margin: 0 auto;
+    line-height: normal;
+}
+ul.offer_statistic li{
+    display: inline-block;
+    font-size: 130px;
+    position: relative;
+    font-family: 'Gotham-Bold';
+    text-align: center;
+    margin-right: 70px;
+}
+ul.offer_statistic li span{
+    position: absolute;
+    font-size: 30px;
+    top: 40%;
+    color: #231f20;
+    left: 0;
+    width: 100%;
+}
+
+/* course box */
+#online_offer{
+    background: #F2F2F3;
+    display: table;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.guest_course_box_action{
+    padding-top: 30px;
+}
+.guest_course_box_action p{
+    font-family: 'Gotham-Book';
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+}
+.guest_course_box{
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    border: 3px solid #231f20;
+}
+.noborder{
+    border: 0;
+}
+.guest_course_box_plan{
+    display: inline-block;
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+    float: left;
+    padding-right: 10px;
+}
+.new-pricing.guest_course_box_plan{
+    padding-right: 0;
+    width: 48%;
+}
+.guest_course_box_plan.guest_course_box_yearly{
+    padding-right: 0;
+}
+.guest_course_box_yearly_image{
+    text-align: right;
+    z-index: 2;
+}
+.guest_course_box_yearly_image img{
+    margin-left: -30px;
+    float: left;
+    display: block;
+}
+.new-pricing.guest_course_box_yearly_image img{
+    margin-left: 50px;
+}
+.new-pricing.guest_course_box_yearly .best_value {
+    color: #00a14b;
+    padding-top: 18px;
+}
+.new-pricing.guest_course_box_monthly {
+    box-shadow: 0px 0px 7px 0px #bbb9b9;
+    margin-right: 4%;
+}
+.guest_course_box_monthly_image{
+    text-align: left;
+    z-index: 2;
+}
+.guest_course_box_monthly_image img{
+    margin-right: -30px;
+    float: right;
+    display: block;
+}
+.new-pricing.guest_course_box_monthly_image img{
+    margin-right: 0;
+}
+.guest_course_box_header{
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Gotham-Bold';
+    font-size: 32px;
+}
+.new-pricing .guest_course_box_header{
+    font-size: 40px;
+}
+.guest_course_box_red{
+    background: #EC1C24;
+}
+.guest_course_border_red{
+    border: 5px solid #EC1C24;
+}
+.guest_course_box_orange{
+    background: #f16624;
+}
+.guest_course_box_green{
+    background: #00A14B;
+}
+.guest_course_border_green{
+    border: 5px solid #00A14B;
+}
+.guest_course_box_purple{
+    background: rgb(128, 64, 152);
+}
+.guest_course_border_purple{
+    border: 5px solid rgb(128, 64, 152);
+}
+.bonus_offer {
+    color: #fff;
+    font-family: 'Gotham-Medium';
+    font-size: 19px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.bonus_offer span {
+    display: block;
+}
+.guest_course_box_content{
+    min-height: 105px;
+    position: relative;
+    color: #fff;
+    font-size: 65px;
+    font-family: "Gotham-Bold";
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    line-height: normal;
+}
+.new-pricing .guest_course_box_content{
+    color: #000;
+    font-size: 44px;
+    padding: 20px 5px 10px;
+}
+.guest_course_box_content .current_currency{
+    font-size: 30px;
+    vertical-align: super;
+    font-family: 'Gotham-Book';
+}
+.new-pricing .guest_course_box_content .current_currency{
+    font-size: 36px;
+}
+
+.guest_course_box_content .box_course_interval{
+    font-size: 22px;
+    vertical-align: baseline;
+    font-family: 'Gotham-Book';
+}
+.guest_course_box_content .box_course_info{
+    font-size: 20px;
+    font-family: 'Gotham-Book';
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: normal;
+}
+.new-pricing .guest_course_box_content .box_course_info{
+    font-size: 16px;
+    padding-top: 10px;
+}
+.guest_course_box_content .box_course_info span{
+    display: block;
+}
+.guest_course_red_box_overlay{
+    background: url('../images/guest_red_overlay.png');
+}
+.guest_course_green_box_overlay{
+    background: url('../images/guest_green_overlay.png');
+}
+.guest_course_purple_box_overlay{
+    background: rgba(128, 64, 152, 0.7);
+}
+.new-pricing .guest_course_red_box_overlay{
+    color: #000;
+}
+.new-pricing .guest_course_green_box_overlay{    
+    background: transparent;
+    border-left: 2px solid #00a14b;
+    border-right: 2px solid #00a14b;
+    color: #000;
+}
+.guest_box_save_price{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('../images/save_price.png?ver=2') no-repeat;
+    width: 110px;
+    height: 80px;
+    background-size: contain;
+}
+.new-pricing .guest_box_save_price{
+    top: -70px;
+    right: -35px;
+    width: 35px;
+    height: auto;
+    background: #ec2127;
+    font-family: 'Gotham-Book';
+    padding: 7px 0;
+    z-index: 10;
+}
+.new-pricing .guest_save_from_price {
+    display: block;
+    font-size: 22px;
+    position: static;    
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+}
+.guest_save_from_price{
+    position: absolute;
+    color: #fff;
+    right: 29px;
+    top: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+}
+.offer_list{
+    display: table;
+    width: 100%;
+}
+.offer_list ul{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+.new-pricing.offer_list ul{
+    margin-left: 0;
+    padding: 20px 20px 20px 35px;
+    box-shadow: 0px 0px 7px 0px #bbb9b9;
+}
+.offer_list ul li{
+    text-align: left;
+    font-family: 'Gotham-Book';
+    font-size: 15px;
+    list-style-type: disc;
+    padding-right: 20px;
+    position: relative;
+}
+.offer_list ul li img{
+    float: right;
+    height: 16px;
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+.guest_school_container {
+    display: flex;
+    width: 100%;
+}
+.general_testimonials{
+    display: block;
+}
+.general_testimonials{
+    max-width: 320px;
+    float: right;
+    margin-right: 70px;
+}
+.guest_general_testimonials{
+    background: #f7941d;
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+.guest_general_upgrade{
+    width: 60%;
+    display: inline-block;
+    background: #fbb040;    
+    float: left;
+}   
+.guest_general_testimonials .general_testimonials .description{
+    padding-left: 0;
+    padding-right: 0;
+}
+.guest_general_testimonials .general_testimonials .name{
+    color: #fff;
+}
+.guest_general_testimonials .general_testimonials .comma{
+    background: url('../images/guest_comma.png') no-repeat;
+    background-size: contain;
+    width: 49px;
+    height: 33px;
+    margin: 0 auto;
+}
+.guest_general_testimonials .owl-dots {
+    margin: 0 auto; /*for centering the dots*/
+    text-align: center;
+}
+.guest_general_testimonials .owl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid #fbb040;
+    background: #fbb040;
+    margin-right: 5px;
+    display: inline-block;  /*for making them horizontal, if you want vertical then you can use- display: block*/
+}
+.guest_general_testimonials .owl-dot.active {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+body .guest_general_testimonials .owl-carousel .owl-nav.disabled{
+    display: none;
+}
+.guest_upgrade_info{
+    padding: 70px;
+}
+.guest_upgrade_info .icon-user-icon{
+    font-size: 50px;
+}
+.guest_upgrade_info .icon-user-icon::before{
+    color: #7f3f98;
+}
+.guest_upgrade_info h2{
+    color: #fff;
+    font-family: 'Gotham-Medium';
+    font-size: 40px;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.guest_upgrade_info p{
+    font-family: 'Gotham-Book';
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    margin-bottom: 20px;
+}
+.guest_schools_benefits{
+    font-size:0;
+    background: #fff;
+}
+.guest_schools_benefits .row{
+    max-width: none;
+}
+.guest_school_box_info{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    padding: 50px 10px 50px 10px;
+    text-align: center;
+}
+.guest_school_box_title{
+    font-size: 25px;
+    font-family: 'Gotham-Book';
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: normal;
+}
+.guest_school_box_content{
+    font-family: 'Gotham-Book';
+    font-size: 16px;
+    line-height: normal;
+}
+@media(max-width: 1367px){
+    .school_course_card{
+        width: 16.65%;
+    }
+}
+@media(max-width: 1250px){
+    .school_course_card{
+        width: 20%;
+    }
+    .guest_school_box_content{
+        font-size: 14px;
+    }
+    .guest_school_box_title{
+        font-size: 16px;
+    }
+}
+@media(max-width: 1150px){
+    .school_course_card{
+        width: 25%;
+    }
+}
+@media(max-width: 992px){
+    .guest_course_box_content .box_course_info {
+        font-size: 16px;
+    }
+    .guest_course_box_header{
+        font-size: 30px;
+    }
+    .general_testimonials{
+        margin-right: 0;
+    }
+    ul.offer_statistic li{
+        margin-right: 50px;
+    }
+    .school_course_card{
+        width: 33%;
+    }
+    .guest_school_box_content{
+        font-size: 16px;
+    }
+    .guest_school_box_title{
+        font-size: 25px;
+    }
+    .guest_school_box_info{
+        width: 50%;
+        padding: 20px;
+    }
+    .guest_schools_benefits .guest_school_box_info:last-of-type{
+        width: 100%;
+    }
+}
+
+@media(width: 768px){
+    .guest_course_box{
+        width: 100% !important;
+    }
+    .guest_course_box_monthly_image,.guest_course_box_yearly_image{
+        display: none;
+    }
+}
+@media(max-width: 768px){
+    .guest_course_box{
+        width: 100% !important;
+    }
+    .guest_course_box_monthly_image,.guest_course_box_yearly_image{
+        display: none;
+    }
+    .guest_school_container{
+        display: block;
+    }
+    .guest_general_testimonials, .guest_general_upgrade{
+        width: 100%;
+        display: block;
+    }
+    .guest_upgrade_info{
+        padding: 20px;
+    }
+    .general_testimonials{
+        margin: 0 auto;
+        float: none;
+    }
+    ul.offer_statistic li{
+        font-size: 100px;
+        margin-right: 30px;
+    }
+    ul.offer_statistic li span{
+        font-size: 22px;
+    }
+    .user-guest-content{
+        padding-top: 0;
+    }
+    #front_online_offer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }        
+    .guest_box_save_price {
+        right: -2px;
+    }
+    .new-pricing .guest_box_save_price {
+        right: -2px;
+    }
+}
+@media(max-width: 600px){
+    .guest_course_box_plan{
+        width: 100%;
+        padding: 10px;
+    }
+    .new-pricing.guest_course_box_plan{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .guest_course_box_plan.guest_course_box_yearly{
+        padding-right: 10px;
+    }
+    .new-pricing.guest_course_box_plan.guest_course_box_yearly{
+        padding-right: 0;
+    }
+    .guest_upgrade_info h2{
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .guest_upgrade_info p{
+        font-size: 14px;
+    }
+    ul.offer_statistic li{
+        display: block;
+        font-size: 130px;
+    }
+    ul.offer_statistic li span{
+        font-size: 30px;
+    }
+    .school_course_card{
+        width: 50%;
+    }
+    .guest_school_box_info{
+        width: 100%;
+    }
+    .guest_container_grey iframe{
+        height: 250px !important;
+    }
+    .guest_course_box_plan{
+        width: 100%;
+    }
+    .guest_course_box_monthly {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 450px){
+    .guest_course_box_content .box_course_info {
+        font-size: 12px;
+    }
+    .guest_course_box_header {
+        font-size: 20px;
+    }
+    .school_course_card .user-main-course-name{
+        font-size: 12px;
+        height: 65px;
+    }
+    .user-guest-content{
+        padding-top: 0;
+    }
+    .guest_container_grey iframe{
+        height: 250px !important;
+    }
+}
+
+@media(min-width: 769px) and (max-width: 992px){
+    .guest_course_box_content {
+        font-size: 45px;
+    }
+    .guest_course_box_header {
+        font-size: 20px;
+    }
+}

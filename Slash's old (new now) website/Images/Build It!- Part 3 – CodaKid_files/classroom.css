@@ -1,0 +1,243 @@
+.classroom_container{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.classroom_header{
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #EAEAEA;
+    border: 1px solid #231F20;
+    padding: 20px;
+    position: relative;
+}
+.classroom_header_box{
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #231F20;
+    padding: 20px;
+    position: relative;
+}
+.classroom_header > div{
+    display: inline-block;
+    float: left;
+    width: 33%;
+    position: relative;
+    padding-left: 60px;
+}
+.classroom_header > div:last-of-type{
+    padding-left: 0;
+}
+.btn_classroom{
+    background: #FC0DBE;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    padding-right: 40px;
+    padding-left: 20px;
+    display: inline-block;
+    font-family: 'Gotham-Medium';
+    border: 0;
+    line-height: normal;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.btn_classroom > i {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 25px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.btn_classroom_black{
+    background: #141414;
+}
+.btn_classroom:hover, .btn_classroom:active, .btn_classroom:visited, .btn_classroom:focus{
+    color: #fff;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+}
+.classroom_info{
+    color: #FC0DBE;
+    font-family: 'Gotham-Medium';
+}
+.classroom_table, .classroom_table tr, .classroom_table td, .classroom_table th{
+    background: #fff;
+    border: 1px solid #231F20;
+    border-collapse: collapse;
+    line-height: normal;
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+}
+.classroom_table td, .classroom_table th{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.classroom_table .pull-center{
+    text-align: center;
+}
+.classroom_licenses .codakid-user-licenses, .classroom_remaining_licenses .codakid-user-licenses-remaining{
+    font-size: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+}
+.classroom-license-text{
+    font-size: 18px;
+    font-family: 'Gotham-Medium';
+    margin-top: 10px;
+    display: block;
+    line-height: normal;
+}
+
+
+/* The Modal (background) */
+.classroom-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .classroom-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+  }
+  .classroom-modal-header{
+      background: #FC0DBE;
+      padding: 20px;
+      color: #fff;
+      font-size: 20px;
+      font-family: 'Gotham-Medium';
+      text-transform: uppercase;
+  }
+  .classroom-modal-container{
+        max-width: 600px;
+        margin: 30px auto;
+        padding-left: 20px;
+        padding-right: 20px;
+  }
+  .classroom-modal-container input[type="text"], .classroom-modal-container input[type="password"]{
+        background: #fff;
+        border: 1px solid #141414;
+        box-shadow: none;
+        text-align: center;
+  }
+  .classrrom-form-label{
+    font-size: 14px;
+    font-family: 'Gotham-Medium';
+  }
+  /* .classroom-modal-container input[type="text"].form_password{
+    background: #141414;
+    color: #fff;
+  } */
+  .classroom-modal-container .classroom-courses-actions{
+      margin-top: 30%;
+      display: block;
+  }
+  .classroom-courses-select{
+    padding: 0;
+  }
+  .import_classrrom_description{
+    font-size: 18px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+  }
+  .import_classrrom_template{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+  }
+  .import_classrrom_template img{
+      margin-bottom: 10px;
+  }
+  .import_classrrom_template a{
+      color: #141414;
+  }
+  .import_classrrom_upload_file{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #FC0DBE;
+    border-bottom: 1px solid #FC0DBE;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .import_classrrom_upload_file{
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+  }
+  .import_classrrom_upload_file > div{
+      display: inline-block;
+  }
+
+  .upload-import-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .upload-import-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  
+  /* The Close Button */
+  .classroom-close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .classroom-close:hover,
+  .classroom-close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*mobile part */
+@media(max-width: 768px){ 
+  .classroom-modal-container .classroom-courses-actions{
+    margin-top: 0;
+    display: block;
+  }
+}
+
+@media(max-width: 600px){ 
+  .classroom_header > div{
+    width: 50%;
+  }
+  .classroom_header > div:last-of-type{
+    width: 100%;
+  }
+}

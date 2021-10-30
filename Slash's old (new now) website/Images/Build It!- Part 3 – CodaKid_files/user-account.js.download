@@ -1,0 +1,84 @@
+var $courses = jQuery('.user-course-carousel').owlCarousel({
+    margin:5,
+    nav:true,
+    loop:false,
+    rewindNav:false,
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:4
+        },
+        1200:{
+            items:5
+        },
+        1367:{
+            items:7
+        }
+    }
+});
+var $recent_courses = jQuery('.user-recent-course-carousel').owlCarousel({
+    margin:5,
+    nav:true,
+    loop:false,
+    rewindNav:false,
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        768:{
+            items:3
+        },
+        991:{
+            items:1
+        },
+        1200:{
+            items:2
+        },
+        1367:{
+            items:2
+        }
+    }
+});
+
+var $testimonials = jQuery('#guest_trial_testimonials').owlCarousel({
+    navigation : false, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    items : 1, 
+    itemsDesktop : false,
+    itemsDesktopSmall : false,
+    itemsTablet: false,
+    itemsMobile : false,
+    pagination: true,
+    dots: true
+});
+
+jQuery(document).ready(function(){
+    $courses.trigger('refresh.owl.carousel');
+    jQuery('.menu-mobile-action').click(function (e) {
+        e.preventDefault();
+        jQuery('.account-sidebar-menu').toggleClass('showMobileMenu');
+  });
+
+  jQuery(document).on('click','.user-account-name', function(e){
+    if(jQuery( window ).width() < 768){
+        e.preventDefault();
+    }
+  });
+
+  jQuery(document).on('click','.free_trial_user_phone_why', function(e){
+        e.preventDefault();
+        jQuery('.free_trial_user_phone_why_box').toggle();
+  });
+
+});

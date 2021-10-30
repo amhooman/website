@@ -1,0 +1,559 @@
+@media(max-width: 1300px){
+    .page-container{
+        width: 100%;
+        max-width: 100%;
+    }
+    .block_course .title{
+        min-height: 100px;
+    }
+    .online_header_video .page_header,.course_header_video .page_header{
+        padding-left: 50px;
+    }
+    .homepage_header_action {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+}
+/* apply from 992 to 1200 */
+@media(max-width: 1200px){  
+    /*index*/
+    .courses_column{
+        width: 40%;
+    }
+    .courses_content{
+        width: 60%;
+    }
+    /* buttons */
+    .btn-new{
+        padding: 10px 20px 10px 20px;
+        font-size: 25px;
+    }
+    .btn_red .fa, .btn_pink .fa {
+        font-size: 40px;
+        vertical-align: calc(-4px);
+        margin-left: 7px;
+    }
+    .btn-green{
+        padding: 10px 20px 10px 20px;
+    }
+    /*general testiomonials */
+    .general_testimonials .description{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /*general advantage */
+    .general_advantage h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .general_advantage .icon {
+        padding-bottom: 10px;
+    }
+    .general_advantage .icon img{
+        width: 60px;
+    }
+    .general_advantage .description{
+        padding-left: 10%;
+        padding-right: 10%;
+        font-size: 18px;
+    }
+    /* online page */
+    .online_header_video .page_header{
+        width: 50%;
+    }
+    .online_header_video .page_header .title{
+        font-size: 40px;
+    }
+    .block_course .title {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .block_course .description {
+        min-height: 150px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* course page */
+    .course_header_video .page_header{
+        width: 50%;
+    }
+    .course_header_video .page_header .title{
+        font-size: 40px;
+    }
+    #technical-requirements h3{
+        font-size: 25px;
+    }
+    form.multi-form .buttons{
+        max-width: 65%;
+    }
+    form.multi-form .inner-multiform {
+        max-width: 100%;
+    }
+    img.plan_yearly_image{
+        width: 30%;
+        right: -155px;
+    }
+    img.plan_monthly_image {
+        left: -115px;
+        width: 20%;
+    }
+    .free_trial_user_phone_why_box {
+        height: 80px;
+        width: 150px;
+        right: -240px;
+        font-size: 14px;
+        padding: 5px;
+    }
+    .free_trial_user_phone_why_box:after {
+        left: -40px;
+        border: 20px solid transparent;
+    }
+    .free_trial_user_phone_why_box:after {
+        border-right-color: rgba(255,255,255,.7);
+    }
+    h2.user-course-category{
+        font-size: 24px !important;
+    }
+}
+/* apply from 769 to 992 */
+@media(max-width: 992px){  
+    .account-sidebar-menu.showMobileMenu{
+        display: block;
+    }
+    .homepage_header .before_info{
+        font-size: 40px;
+    }
+    .homepage_header_action{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .homepage_header .header_info > div{
+        width: 100%;
+    }
+    .header_info .info_1{
+        text-align: right;
+        font-size: 40px;
+    }
+
+    .courses_column,.courses_content{
+        width: 50%;
+    }
+    .online_courses_info_video .info {
+        width: 100%;
+        text-align: center;
+    }
+    .online_courses_info_video .description{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .online_courses_action a{
+        margin: 10px auto;
+    }
+    .online_courses_action{
+        text-align: center;
+    }
+    .general_advantage .description{
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .general_advantage .icon img{
+        width: 40px;
+    }
+    .online_header_video{
+        padding-top: 250px;
+    }
+    .online_header_video .page_header{
+        width: 70%;
+    }
+    .block_course .title{
+        font-size: 16px;
+        min-height: 60px;
+    }
+    .block_course .description{
+        font-size: 16px;
+    }
+    .course_header_video .page_header{
+        width: 70%;
+    }
+    #technical-requirements h3{
+        font-size: 20px;
+    }
+    .free_trial_progress_banner_1 {
+        position: absolute;
+        left: -140px;
+        bottom: 0;
+        width: 200px;
+    }
+    .free_trial_progress_banner_2 {
+        position: absolute;
+        right: -120px;
+        bottom: 0;
+        width: 120px;
+    }
+    .free_trial_user_phone_why_box {
+        height: 80px;
+        width: 150px;
+        right: -110px;
+        font-size: 14px;
+        padding: 5px;
+        bottom: -80px;
+    }
+    .free_trial_user_phone_why_box:after {
+        position: absolute;
+        bottom: 0px;
+        content: '';
+        height: 0;
+        width: 0;
+        border: 15px solid transparent;
+        z-index: 2;
+        top: -30px;
+        left: 50px;
+    }
+    .free_trial_user_phone_why_box:after {
+        border-bottom-color: rgba(255,255,255,.7);
+    }
+}
+/*mobile part */
+@media(max-width: 768px){ 
+    .general_teacher_video iframe{
+        width: 100% !important;
+    }
+    .homepage_header{
+        background: url('../images/mobile_header_bg.png') no-repeat;
+        background-size: cover !important;
+    }
+    .homepage_header .header_content{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .homepage_header_action{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .btn-new{
+        font-size: 20px;
+        padding: 5px 15px 5px 15px;
+    }
+    .btn_red .fa, .btn_pink .fa{
+        font-size: 33px;
+        vertical-align: calc(-3px);
+    }
+    .homepage_header .before_info{
+        font-size: 23px;
+        text-align: left;
+    }
+    .header_info .info_1,.header_info .info_2 .subtitle,
+    .header_info .info_2 .title
+    {
+        font-size: 20px;
+        text-align: left;
+    }
+    .homepage_benefits h3{
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .homepage_header_action a {
+        margin: auto auto auto 0;
+    }
+    .homepage_header a.action_learn{
+        color: transparent;
+        font-size: 1px;
+    }
+    .homepage_benefits_description{
+       padding-left: 20px; 
+       padding-right: 20px; 
+    }
+    .courses_column, .courses_content{
+        width: 100%;
+    }
+    .programming_language_image{
+        width: 50%;
+    }
+    .general_teacher h2,
+    .programming_language h2,
+    .online_courses h2,
+    .homepage_benefits h2,
+    .general_featured_press h2
+    {
+        font-size: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .general_teacher_description{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .general_teacher_action a{
+        margin: 10px auto;
+    }
+    .general_advantage .icon img{
+        width: 100px;
+    }
+    .general_advantage .description{
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+    .general_featured_press .featured .brand{
+        width: 100%;
+        text-align: center;
+    }
+    .general_banner{
+        min-height: 450px;
+        background-size: contain;
+    }
+    .general_banner .title{
+        font-size: 30px;
+    }
+    .general_banner .before_title{
+        font-size: 20px;
+    }
+    .general_banner_action a{
+        margin: 10px auto;
+        font-size: 16px;
+    }
+    .general_banner_action a .fa{
+        font-size: 23px;
+        vertical-align: calc(-2px);
+    }
+    .general_banner_info {
+        bottom: 30px;
+        left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .online_header_video .page_header{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+    }
+    .online_header_video{
+        padding-top: 120px;
+    }
+    .online_header_video .page_header .title{
+        font-size: 35px;
+    }
+    .online_header_video .page_header .instant{
+        font-size: 30px;
+    }
+    .general_courses .block_course{
+        width: 100%;
+    }
+    .block_course .description{
+        min-height: auto;
+        padding-bottom: 20px;
+    }
+    .block_course .title{
+        min-height: auto;
+    }
+    .course_header_video .page_header{
+        width: 100%;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .course_header_video{
+        padding-top: 100px;
+    }
+    .course_header_video .page_header .title{
+        font-size: 30px;
+    }
+    .course_information{
+        text-align: center;
+    }
+    .course_chapters .chapter_content{
+        width: 100%;
+        margin: 10px auto;
+    }
+    .only_desktop{
+        display: none;
+    }
+    .only_mobile{
+        display: block;
+    }
+    .online_courses_mobile{
+        display: table;
+    }
+    .general_advantage_mobile .banner_mobile .icon{
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+    .free_trial_progress_banner_1, .free_trial_progress_banner_2{
+        display: none;
+    }
+    .checkout_box_left, .checkout_box_right{
+        width: 100%;
+    }
+    .checkout_box_border{
+        border: 0;
+    }
+    .woocommerce form.checkout_coupon, .checkout_box .ywgc-enter-code{
+        padding: 0;
+    }
+    .checkout_box_content .woocommerce-billing-fields .form-row, .checkout_box_content .woocommerce-account-fields .form-row{
+        width: 100%;
+    }
+    .checkout_simple_cart_bottom {
+        display: table;
+        width: 100%;
+    }
+    .checkout_simple_cart_bottom > div{
+        display: block;
+        width: 100%;
+    }
+    .checkout_simple_cart_action{
+        margin-top: 10px;
+    }
+    .checkout_simple_cart_quantity, .checkout_simple_cart_btn{
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .checkout_simple_cart_title{
+        font-size: 20px;
+    }
+    .checkout_simple_cart_type{
+        font-size: 18px;
+    }
+    .woo_checkout_header{
+        font-size: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .checkout_box_form_login {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .free_trial_user_phone_why, .free_trial_user_phone_why_box{
+        display: none;
+    }
+    #user_phone{
+        margin-bottom: 5px !important;
+    }
+}
+@media(max-height: 768px){ 
+    .homepage_header_action{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 450px){ 
+    .general_advantage_mobile .banner_mobile .info{
+        left: 0;
+    }
+    .general_advantage_mobile .banner_mobile .info h3,
+    .general_advantage_mobile .banner_mobile .info .description{
+        padding-left: 20px;
+    }
+    .mobile_action a{
+        padding: 5px;
+    }
+    .course_content_mobile img{
+        width: 50px;
+        top: 30px;
+    }
+    .course_content_mobile .description{
+        padding-left: 80px;
+        margin-top: 0;
+    }
+    .mobile_action{
+        text-align: center;
+    }
+    .general_teacher_action{
+        text-align: center;
+    }
+    .general_teacher_action a{
+        padding: 5px;
+        font-size: 16px;
+    }
+    .general_teacher_action .fa {
+        font-size: 23px;
+        vertical-align: calc(-2px);
+    }
+    .general_banner{
+        min-height: 550px;
+        background-position: -550px 0 !important;
+    }
+    .general_banner .before_title {
+        font-size: 40px;
+        line-height: normal;
+    }
+    .general_banner .title{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .general_banner_action a{
+        padding: 5px;
+    }
+    .checkout_simple_cart_content img{
+        max-width: 100px;
+    }
+    .checkout_simple_cart_content{
+        padding-left: 120px;
+    }
+    .woocommerce #checkout_form_billing .form-row label, .woocommerce #checkout_form_billing .form-row input{
+        width: 100% !important;
+    }
+}
+@media(max-width: 400px){
+    .checkout_container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .checkout_simple_cart_content img {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .checkout_simple_cart_content{
+        padding-left: 0;
+    }
+    .checkout_coupon .form-row, .ywgc-enter-code .form-row{
+        width: 100% !important;
+    }
+    body .woocommerce .checkout_btn.checkout_btn_transparent{
+        width: 100%;
+    }
+    .woocommerce-checkout #payment ul.payment_methods{
+        padding: 0;
+    }
+    .checkout_box_review_container{
+        padding: 5px;
+    }
+}
+@media (max-width: 900px){
+    img.plan_monthly_image, img.plan_yearly_image{
+        display: none;
+    }  
+    form.multi-form .buttons {
+        max-width: 90%;
+    }
+
+    form.multi-form .inner-multiform {
+        max-width: 100%;
+    }
+}
+@media(max-width: 730px){ 
+    .form-group .plan.three-plan {
+        width: 100%;
+        display: block;
+    }
+}
+@media(max-width: 650px){ 
+    .form-group .plan{
+        width: 100%;
+        display: block;
+    }
+    .thank_you_page_container h2{
+        font-size: 25px;
+    }
+    .thank_you_box h3{
+        font-size: 18px;
+    }
+ }

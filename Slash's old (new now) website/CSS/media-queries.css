@@ -1,0 +1,54 @@
+/* CSS Breakpoints */
+/* Phone */
+
+@media only screen and (max-width : 600px){
+
+  header {background-color: black}
+
+
+header div,
+section nav,
+footer,
+.content {
+  width: 100%;
+  padding: 0;
+}
+
+section {padding: 0;}
+section nav {
+  left: 0;
+  top: 0;
+}
+
+header div {
+  padding:10px;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+}
+
+section {
+  min-height: 550px;
+}
+
+.content {
+  padding: 10px;
+  width: 100%;
+  min-height: 450px;
+}
+
+footer div {
+
+  position: relative;
+margin: 0 auto;
+}
+
+iframe {
+  height: auto;
+  width: auto;
+}
+
+
+}

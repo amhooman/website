@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://my.codakid.com/topic/build-it-part-3/ -->
+<html lang="en-US" class="gr__my_codakid_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="shortcut icon" href="https://my.codakid.com/wp-content/themes/Codakid/favicon.ico">
+    <title>Build It!- Part 3 – CodaKid</title>
+<link rel="dns-prefetch" href="https://cdn.ckeditor.com/">
+<link rel="dns-prefetch" href="https://player.vimeo.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/wvepyczd"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/ec.js.download"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/hotjar-933239.js.download"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/f.txt"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/hotjar-140866.js.download"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Build It!- Part 3 – CodaKid_files/saved_resource"></script><script async="" src="./Build It!- Part 3 – CodaKid_files/fbevents.js.download"></script><script async="" src="./Build It!- Part 3 – CodaKid_files/gtm.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/my.codakid.com\/wp-includes\/js\/wp-emoji.js?ver=4.9.8","twemoji":"https:\/\/my.codakid.com\/wp-includes\/js\/twemoji.js?ver=4.9.8"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Check if two sets of Emoji characters render the same.
+	 *
+	 * @param set1 array Set of Emoji characters.
+	 * @param set2 array Set of Emoji characters.
+	 * @returns {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji".
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 56826, 55356, 56819 ],
+					[ 55356, 56826, 8203, 55356, 56819 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ],
+					[ 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * She's the hero Emoji deserves, but not the one it needs right now.
+				 *
+				 * To test for support, try to render a new emoji (female superhero),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (superhero + female sign).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[55358, 56760, 9792, 65039],
+					[55358, 56760, 8203, 9792, 65039]
+				);
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script><script src="./Build It!- Part 3 – CodaKid_files/twemoji.js.download" type="text/javascript" defer=""></script><script src="./Build It!- Part 3 – CodaKid_files/wp-emoji.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="smart-coupon-css" href="./Build It!- Part 3 – CodaKid_files/smart-coupon.css" type="text/css" media="all">
+<link rel="stylesheet" id="badgeos-suggested-achievements-css" href="./Build It!- Part 3 – CodaKid_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpProQuiz_front_style-css" href="./Build It!- Part 3 – CodaKid_files/wpProQuiz_front.css" type="text/css" media="all">
+<link rel="stylesheet" id="learndash_style-css" href="./Build It!- Part 3 – CodaKid_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="sfwd_front_css-css" href="./Build It!- Part 3 – CodaKid_files/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="jquery-dropdown-css-css" href="./Build It!- Part 3 – CodaKid_files/jquery.dropdown.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="learndash_template_style_css-css" href="./Build It!- Part 3 – CodaKid_files/learndash_template_style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wcaiocc-frontend-style-handle-css" href="./Build It!- Part 3 – CodaKid_files/wcaiocc-frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-layout-css" href="./Build It!- Part 3 – CodaKid_files/woocommerce-layout.css" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-smallscreen-css" href="./Build It!- Part 3 – CodaKid_files/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)">
+<link rel="stylesheet" id="woocommerce-general-css" href="./Build It!- Part 3 – CodaKid_files/woocommerce.css" type="text/css" media="all">
+<link rel="stylesheet" id="badgeos-single-css" href="./Build It!- Part 3 – CodaKid_files/badgeos-single.css" type="text/css" media="all">
+<link rel="stylesheet" id="_blend-google-font-css" href="./Build It!- Part 3 – CodaKid_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="_blend-blend-style-css" href="./Build It!- Part 3 – CodaKid_files/blend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="_blend-custom-style-css" href="./Build It!- Part 3 – CodaKid_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="mycourses-css" href="./Build It!- Part 3 – CodaKid_files/mycourses.css" type="text/css" media="all">
+<link rel="stylesheet" id="owl-2-css" href="./Build It!- Part 3 – CodaKid_files/owl.carousel.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./Build It!- Part 3 – CodaKid_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="global-css" href="./Build It!- Part 3 – CodaKid_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="checkout-css" href="./Build It!- Part 3 – CodaKid_files/checkout.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-global-css" href="./Build It!- Part 3 – CodaKid_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="featured-css" href="./Build It!- Part 3 – CodaKid_files/featured.css" type="text/css" media="all">
+<link rel="stylesheet" id="user-account-custom-style-css" href="./Build It!- Part 3 – CodaKid_files/user-account.css" type="text/css" media="all">
+<link rel="stylesheet" id="user-account-custom-icons-css" href="./Build It!- Part 3 – CodaKid_files/icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="user-guest-custom-style-css" href="./Build It!- Part 3 – CodaKid_files/user-guest.css" type="text/css" media="all">
+<link rel="stylesheet" id="animation-css" href="./Build It!- Part 3 – CodaKid_files/animate.css" type="text/css" media="all">
+<link rel="stylesheet" id="user-classroom-css" href="./Build It!- Part 3 – CodaKid_files/classroom.css" type="text/css" media="all">
+<link rel="stylesheet" id="firework-css-css" href="./Build It!- Part 3 – CodaKid_files/jquerysctipttop.css" type="text/css" media="all">
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/suggested-achievements.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/ckeditor.js.download"></script><style>.cke{visibility:hidden;}</style>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/jquery-migrate.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wcaiocc_vars_data = {"ajaxurl":"https:\/\/my.codakid.com\/wp-admin\/admin-ajax.php","currency_change_key":"wcaiocc_change_currency_code","currency_changed":"","conversion_method":"reference","base_currency":"USD","base_currency_data":{"code":"USD","name":"United States dollar","symbol":"&#36;","position":"left","thousand_separator":",","decimal_separator":".","number_decimals":2},"currency":"USD","currency_data":{"order":1,"name":"United States dollar","symbol":"&#36;","position":"left","thousand_separator":",","decimal_separator":".","number_decimals":"2","rate":"1","api":""},"wc_version":"3.2.2","wp_nonce":"adbae5f9b0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/wcaiocc-frontend.min.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/owl.carousel.min.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/player.js(1).download"></script>
+<link rel="https://api.w.org/" href="https://my.codakid.com/wp-json/">
+<link rel="canonical" href="https://my.codakid.com/topic/build-it-part-3/">
+<link rel="alternate" type="application/json+oembed" href="https://my.codakid.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmy.codakid.com%2Ftopic%2Fbuild-it-part-3%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://my.codakid.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmy.codakid.com%2Ftopic%2Fbuild-it-part-3%2F&amp;format=xml">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVJH5C');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+           var ajaxurl = "https://my.codakid.com/wp-admin/admin-ajax.php";
+         </script>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- WooCommerce Facebook Integration Begin -->
+
+<script type="text/javascript">
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+
+<script>
+fbq('init', '267790463565630', {
+    "em": "debszy4@yahoo.com",
+    "fn": "Debbie",
+    "ln": "Kaplan"
+}, {
+    "agent": "woocommerce-3.2.2-1.9.10"
+});
+
+fbq('track', 'PageView', {
+    "source": "woocommerce",
+    "version": "3.2.2",
+    "pluginVersion": "1.9.10"
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  jQuery && jQuery(function($){
+    $('body').on('added_to_cart', function(event) {
+      // Ajax action.
+      $.get('?wc-ajax=fb_inject_add_to_cart_event', function(data) {
+        $('head').append(data);
+      });
+    });
+  });
+}, false);
+
+</script>
+<!-- DO NOT MODIFY -->
+<!-- WooCommerce Facebook Integration end -->
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<script async="" type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/visit"></script><meta class="foundation-mq"><style type="text/css"></style><script async="" src="./Build It!- Part 3 – CodaKid_files/modules.3f87663fe3054321fa13.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script src="./Build It!- Part 3 – CodaKid_files/f(1).txt"></script><style type="text/css">@-webkit-keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}@keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}.om-animation-bounce{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:bounce;animation-name:bounce}@-webkit-keyframes bounceIn{0%{opacity:0;-webkit-transform:scale(.3);transform:scale(.3)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}70%{-webkit-transform:scale(.9);transform:scale(.9)}to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes bounceIn{0%{opacity:0;-webkit-transform:scale(.3);transform:scale(.3)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}70%{-webkit-transform:scale(.9);transform:scale(.9)}to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}.om-animation-bounce-in{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceIn;animation-name:bounceIn}@-webkit-keyframes bounceInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}60%{opacity:1;-webkit-transform:translateY(30px);transform:translateY(30px)}80%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes bounceInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}60%{opacity:1;-webkit-transform:translateY(30px);transform:translateY(30px)}80%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-bounce-in-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInDown;animation-name:bounceInDown}@-webkit-keyframes bounceInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}60%{opacity:1;-webkit-transform:translateX(30px);transform:translateX(30px)}80%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes bounceInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}60%{opacity:1;-webkit-transform:translateX(30px);transform:translateX(30px)}80%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-bounce-in-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft}@-webkit-keyframes bounceInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}60%{opacity:1;-webkit-transform:translateX(-30px);transform:translateX(-30px)}80%{-webkit-transform:translateX(10px);transform:translateX(10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes bounceInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}60%{opacity:1;-webkit-transform:translateX(-30px);transform:translateX(-30px)}80%{-webkit-transform:translateX(10px);transform:translateX(10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-bounce-in-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInRight;animation-name:bounceInRight}@-webkit-keyframes bounceInUp{0%{opacity:0;-webkit-transform:translateY(2000px);transform:translateY(2000px)}60%{opacity:1;-webkit-transform:translateY(-30px);transform:translateY(-30px)}80%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes bounceInUp{0%{opacity:0;-webkit-transform:translateY(2000px);transform:translateY(2000px)}60%{opacity:1;-webkit-transform:translateY(-30px);transform:translateY(-30px)}80%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-bounce-in-up{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInUp;animation-name:bounceInUp}@-webkit-keyframes flash{0%,50%,to{opacity:1}25%,75%{opacity:0}}@keyframes flash{0%,50%,to{opacity:1}25%,75%{opacity:0}}.om-animation-flash{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:flash;animation-name:flash}@-webkit-keyframes flip{0%{-webkit-transform:perspective(800px) translateZ(0) rotateY(0) scale(1);transform:perspective(800px) translateZ(0) rotateY(0) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}@keyframes flip{0%{-webkit-transform:perspective(800px) translateZ(0) rotateY(0) scale(1);transform:perspective(800px) translateZ(0) rotateY(0) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}.om-animation-flip{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flip;animation-name:flip}@-webkit-keyframes flipInX{0%{-webkit-transform:perspective(800px) rotateX(90deg);transform:perspective(800px) rotateX(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateX(-10deg);transform:perspective(800px) rotateX(-10deg)}70%{-webkit-transform:perspective(800px) rotateX(10deg);transform:perspective(800px) rotateX(10deg)}to{-webkit-transform:perspective(800px) rotateX(0deg);transform:perspective(800px) rotateX(0deg);opacity:1}}@keyframes flipInX{0%{-webkit-transform:perspective(800px) rotateX(90deg);transform:perspective(800px) rotateX(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateX(-10deg);transform:perspective(800px) rotateX(-10deg)}70%{-webkit-transform:perspective(800px) rotateX(10deg);transform:perspective(800px) rotateX(10deg)}to{-webkit-transform:perspective(800px) rotateX(0deg);transform:perspective(800px) rotateX(0deg);opacity:1}}.om-animation-flip-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flipInX;animation-name:flipInX}@-webkit-keyframes flipInY{0%{-webkit-transform:perspective(800px) rotateY(90deg);transform:perspective(800px) rotateY(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateY(-10deg);transform:perspective(800px) rotateY(-10deg)}70%{-webkit-transform:perspective(800px) rotateY(10deg);transform:perspective(800px) rotateY(10deg)}to{-webkit-transform:perspective(800px) rotateY(0deg);transform:perspective(800px) rotateY(0deg);opacity:1}}@keyframes flipInY{0%{-webkit-transform:perspective(800px) rotateY(90deg);transform:perspective(800px) rotateY(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateY(-10deg);transform:perspective(800px) rotateY(-10deg)}70%{-webkit-transform:perspective(800px) rotateY(10deg);transform:perspective(800px) rotateY(10deg)}to{-webkit-transform:perspective(800px) rotateY(0deg);transform:perspective(800px) rotateY(0deg);opacity:1}}.om-animation-flip-side{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flipInY;animation-name:flipInY}@-webkit-keyframes lightSpeedIn{0%{-webkit-transform:translateX(100%) skewX(-30deg);transform:translateX(100%) skewX(-30deg);opacity:0}60%{-webkit-transform:translateX(-20%) skewX(30deg);transform:translateX(-20%) skewX(30deg);opacity:1}80%{-webkit-transform:translateX(0) skewX(-15deg);transform:translateX(0) skewX(-15deg);opacity:1}to{-webkit-transform:translateX(0) skewX(0deg);transform:translateX(0) skewX(0deg);opacity:1}}@keyframes lightSpeedIn{0%{-webkit-transform:translateX(100%) skewX(-30deg);transform:translateX(100%) skewX(-30deg);opacity:0}60%{-webkit-transform:translateX(-20%) skewX(30deg);transform:translateX(-20%) skewX(30deg);opacity:1}80%{-webkit-transform:translateX(0) skewX(-15deg);transform:translateX(0) skewX(-15deg);opacity:1}to{-webkit-transform:translateX(0) skewX(0deg);transform:translateX(0) skewX(0deg);opacity:1}}.om-animation-light-speed{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:lightSpeedIn;animation-name:lightSpeedIn;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}@-webkit-keyframes pulse{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulse{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}.om-animation-pulse{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:pulse;animation-name:pulse}@-webkit-keyframes rollIn{0%{opacity:0;-webkit-transform:translateX(-100%) rotate(-120deg);transform:translateX(-100%) rotate(-120deg)}to{opacity:1;-webkit-transform:translateX(0) rotate(0deg);transform:translateX(0) rotate(0deg)}}@keyframes rollIn{0%{opacity:0;-webkit-transform:translateX(-100%) rotate(-120deg);transform:translateX(-100%) rotate(-120deg)}to{opacity:1;-webkit-transform:translateX(0) rotate(0deg);transform:translateX(0) rotate(0deg)}}.om-animation-roll-in{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rollIn;animation-name:rollIn}@-webkit-keyframes rotateIn{0%{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-200deg);transform:rotate(-200deg);opacity:0}to{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateIn{0%{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-200deg);transform:rotate(-200deg);opacity:0}to{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateIn;animation-name:rotateIn}@-webkit-keyframes rotateInDownLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInDownLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-down-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInDownLeft;animation-name:rotateInDownLeft}@-webkit-keyframes rotateInDownRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInDownRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-down-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInDownRight;animation-name:rotateInDownRight}@-webkit-keyframes rotateInUpLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInUpLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-up-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInUpLeft;animation-name:rotateInUpLeft}@-webkit-keyframes rotateInUpRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInUpRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-up-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInUpRight;animation-name:rotateInUpRight}@-webkit-keyframes rubberBand{0%{-webkit-transform:scale(1);transform:scale(1)}30%{-webkit-transform:scaleX(1.25) scaleY(.75);transform:scaleX(1.25) scaleY(.75)}40%{-webkit-transform:scaleX(.75) scaleY(1.25);transform:scaleX(.75) scaleY(1.25)}60%{-webkit-transform:scaleX(1.15) scaleY(.85);transform:scaleX(1.15) scaleY(.85)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes rubberBand{0%{-webkit-transform:scale(1);transform:scale(1)}30%{-webkit-transform:scaleX(1.25) scaleY(.75);transform:scaleX(1.25) scaleY(.75)}40%{-webkit-transform:scaleX(.75) scaleY(1.25);transform:scaleX(.75) scaleY(1.25)}60%{-webkit-transform:scaleX(1.15) scaleY(.85);transform:scaleX(1.15) scaleY(.85)}to{-webkit-transform:scale(1);transform:scale(1)}}.om-animation-rubber-band{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:rubberBand;animation-name:rubberBand}@-webkit-keyframes shake{0%,to{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}@keyframes shake{0%,to{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}.om-animation-shake{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:shake;animation-name:shake}@-webkit-keyframes slideInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes slideInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-slide-in-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInDown;animation-name:slideInDown}@-webkit-keyframes slideInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes slideInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-slide-in-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInLeft;animation-name:slideInLeft}@-webkit-keyframes slideInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes slideInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-slide-in-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInRight;animation-name:slideInRight}@-webkit-keyframes swing{20%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}40%{-webkit-transform:rotate(-10deg);transform:rotate(-10deg)}60%{-webkit-transform:rotate(5deg);transform:rotate(5deg)}80%{-webkit-transform:rotate(-5deg);transform:rotate(-5deg)}to{-webkit-transform:rotate(0deg);transform:rotate(0deg)}}@keyframes swing{20%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}40%{-webkit-transform:rotate(-10deg);transform:rotate(-10deg)}60%{-webkit-transform:rotate(5deg);transform:rotate(5deg)}80%{-webkit-transform:rotate(-5deg);transform:rotate(-5deg)}to{-webkit-transform:rotate(0deg);transform:rotate(0deg)}}.om-animation-swing{-webkit-animation-duration:1s;animation-duration:1s;-webkit-transform-origin:top center;transform-origin:top center;-webkit-animation-name:swing;animation-name:swing}@-webkit-keyframes tada{0%{-webkit-transform:scale(1);transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg);transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg);transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg);transform:scale(1.1) rotate(-3deg)}to{-webkit-transform:scale(1) rotate(0);transform:scale(1) rotate(0)}}@keyframes tada{0%{-webkit-transform:scale(1);transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg);transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg);transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg);transform:scale(1.1) rotate(-3deg)}to{-webkit-transform:scale(1) rotate(0);transform:scale(1) rotate(0)}}.om-animation-tada{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:tada;animation-name:tada}@-webkit-keyframes wobble{0%{-webkit-transform:translateX(0);transform:translateX(0)}15%{-webkit-transform:translateX(-25%) rotate(-5deg);transform:translateX(-25%) rotate(-5deg)}30%{-webkit-transform:translateX(20%) rotate(3deg);transform:translateX(20%) rotate(3deg)}45%{-webkit-transform:translateX(-15%) rotate(-3deg);transform:translateX(-15%) rotate(-3deg)}60%{-webkit-transform:translateX(10%) rotate(2deg);transform:translateX(10%) rotate(2deg)}75%{-webkit-transform:translateX(-5%) rotate(-1deg);transform:translateX(-5%) rotate(-1deg)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes wobble{0%{-webkit-transform:translateX(0);transform:translateX(0)}15%{-webkit-transform:translateX(-25%) rotate(-5deg);transform:translateX(-25%) rotate(-5deg)}30%{-webkit-transform:translateX(20%) rotate(3deg);transform:translateX(20%) rotate(3deg)}45%{-webkit-transform:translateX(-15%) rotate(-3deg);transform:translateX(-15%) rotate(-3deg)}60%{-webkit-transform:translateX(10%) rotate(2deg);transform:translateX(10%) rotate(2deg)}75%{-webkit-transform:translateX(-5%) rotate(-1deg);transform:translateX(-5%) rotate(-1deg)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-wobble{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:wobble;animation-name:wobble}.om-content-lock{color:transparent!important;text-shadow:rgba(0,0,0,.5) 0 0 10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;filter:url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");-webkit-filter:blur(10px);-ms-filter:blur(10px);-o-filter:blur(10px);filter:blur(10px)}html.om-mobile-position,html.om-mobile-position body{position:fixed!important}html.om-ios-form,html.om-ios-form body{-webkit-transform:translateZ(0)!important;transform:translateZ(0)!important;-webkit-overflow-scrolling:touch!important;height:100%!important;overflow:auto!important}html.om-position-popup body{overflow:hidden!important}html.om-position-floating-top{transition:padding-top .5s ease!important}html.om-position-floating-bottom{transition:padding-bottom .5s ease!important}html.om-reset-dimensions{height:100%!important;width:100%!important}.om-verification-confirmation{font-family:Lato,Arial,Helvetica,sans-serif;position:fixed;border-radius:10px;bottom:20px;left:20px;padding:10px 20px;opacity:0;transition:opacity .3s ease-in;background:#85bf31;color:#fff;font-size:18px;font-weight:700;z-index:9999}</style></head>
+<body class="sfwd-topic-template-default single single-sfwd-topic postid-63668 logged-in wp-custom-logo" data-gr-c-s-loaded="true">
+<div class="user-account-bar">
+        <div class="site-logo"> 
+            <a href="https://my.codakid.com/my-courses/" class="custom-logo-link" rel="home" itemprop="url"><img width="228" height="44" src="./Build It!- Part 3 – CodaKid_files/cropped-logo.png" class="custom-logo" alt=""></a>        </div><!-- .site-logo -->
+        
+        <div class="xp_user_group">
+            <div class="xp_user_container">
+                                <div class="xp_user_container_level">
+                <strong>Level</strong> <span class="xp_user_count">17</span> XP 18,250                </div><div class="xp_user_container_progress">
+                    <div class="xp_user_info">450 XP to reach Level 18</div>        
+                    <div class="xp_user_progress_bar">
+                        <div class="xp_user_progress_load" style="width: 76%"></div>
+                    </div>
+                </div>	
+            </div>
+        </div>
+
+        <div class="user-account-info">
+               <ul>
+               <li><a href="https://my.codakid.com/cart/" class="user-shopping-cart"><i class="fa fa-shopping-cart"> </i> </a></li> 
+                <li><a href="https://my.codakid.com/shop/" class="user-shopping-url">Shop</a></li>  
+                <li class="dropdown"><a href="https://my.codakid.com/my-account/" class="user-account-name">Springsteen <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="https://my.codakid.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fmy.codakid.com%2Fmy-account%2F&amp;_wpnonce=3df0c18409"><span class="custom-icon icon-user-log-out"></span> Log out </a></li>
+                    </ul>    
+                </li>    
+                <li><a href="https://my.codakid.com/my-account/"><span class="user-bar-icon icon-user-icon"></span></a></li>
+              </ul>   
+        </div>
+
+        <div class="clear-block clear-currency"></div>
+        <div class="currency-selector currency-selector-user" style="display:none">
+            <div class="selector-container">               
+                
+        <div class="wcaiocc-switcher-buttons wcaiocc-container">
+            <p class="wcaiocc-text">Choose your preferred currency</p>
+            <ul class="wcaiocc-list">
+                <li class="wcaiocc-list-item"><a data-wcaiocc-currency="USD" class="wcaiocc-list-item-link selected" href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">USD</a></li><li class="wcaiocc-list-item"><a data-wcaiocc-currency="CAD" class="wcaiocc-list-item-link " href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">CAD</a></li><li class="wcaiocc-list-item"><a data-wcaiocc-currency="AUD" class="wcaiocc-list-item-link " href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">AUD</a></li><li class="wcaiocc-list-item"><a data-wcaiocc-currency="NZD" class="wcaiocc-list-item-link " href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">NZD</a></li><li class="wcaiocc-list-item"><a data-wcaiocc-currency="EUR" class="wcaiocc-list-item-link " href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">EUR</a></li><li class="wcaiocc-list-item"><a data-wcaiocc-currency="GBP" class="wcaiocc-list-item-link " href="https://my.codakid.com/topic/build-it-part-3/" onclick="return false;">GBP</a></li>            </ul>
+        </div>
+
+                         
+            </div>
+        </div>
+</div>
+ <!-- Side Navigation -->
+ <div class="user-account-sidebar icons cc_cursor">
+    <div class="menu-mobile-action"><i class="fa fa-bars"></i> Menu </div>     
+    <ul class="account-sidebar-menu cc_cursor">
+            <li>
+                <a href="https://my.codakid.com/my-account/" class=""> <span class="custom-icon icon-user-icon"></span><span class="toggle">  PROFILE</span></a>
+            </li>
+            <li> 
+                <a href="https://my.codakid.com/my-courses/" class=""><span class="custom-icon icon-user-course cc_pointer"></span> <span class="toggle">  COURSES</span></a>
+            </li>
+            <li> 
+                <a href="https://intercom.help/codakidonline" class=""><span class="custom-icon icon-user-help"></span> <span class="toggle">  HELP</span></a>
+            </li>
+            <li> 
+                <a href="https://my.codakid.com/badges/" class=""><span class="custom-icon icon-user-badges"></span> <span class="toggle">  BADGES</span></a>
+            </li>
+                        <li> 
+                <a href="https://my.codakid.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fmy.codakid.com%2Fmy-account%2F&amp;_wpnonce=3df0c18409"><span class="custom-icon icon-user-log-out"></span> <span class="toggle">LOG OUT</span></a>
+            </li>
+    </ul>
+</div>   
+    <!-- Main Content Begins Here -->  
+
+<div class="user-account-content icons" role="document">
+    <div class="row-group">
+	<div id="primary" class="medium-12 large-12 columns content-area">
+		<main id="main" class="site-main" role="main">
+					
+<article id="post-63668" class="post-63668 sfwd-topic type-sfwd-topic status-publish hentry user-has-not-earned">
+
+	<div class="entry-content">
+		<div class="learndash learndash_post_sfwd-topic user_has_access" id="learndash_post_63668"><div class="video_course_lesson">
+	<div id="learndash_topic_dots-63626" class="learndash_topic_dots type-dots">
+
+		<b>Lesson Progress:</b>
+
+								<a class="topic-completed" href="https://my.codakid.com/topic/chapter-3-intro-3/" title="Chapter 3 Intro">
+				<span title="Chapter 3 Intro"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/coding-with-style/" title="What is CSS?">
+				<span title="What is CSS?"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/please-contain-yourself/" title="Please, Containerize Yourself">
+				<span title="Please, Containerize Yourself"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-1/" title="Build It!- Part 1">
+				<span title="Build It!- Part 1"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-2/" title="Build It!- Part 2">
+				<span title="Build It!- Part 2"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-3/" title="Build It!- Part 3">
+				<span title="Build It!- Part 3"></span>
+			</a>
+								<a class="topic-completed" href="https://my.codakid.com/topic/a-pigment-of-your-imagination/" title="A Pigment of Your Imagination">
+				<span title="A Pigment of Your Imagination"></span>
+			</a>
+		
+	</div>
+
+<div id="learndash_back_to_lesson"><a href="https://my.codakid.com/lessons/chapter-3-do-it-with-style/">← Back to Chapter</a></div>
+
+
+	<div class="learndash_content">
+		<div class="text-center"><button class="video-play-button video-topic" id="play-button" onclick="playVideo()" style="margin-top: 118px; opacity: 1;"></button></div>
+		<button class="btn rewind-button" id="rewind-button" onclick="skipbck()" style="margin-top: 228px;"></button>
+		<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="./Build It!- Part 3 – CodaKid_files/255620956.html" width="300" height="150" frameborder="0" allowfullscreen="allowfullscreen" data-ready="true"></iframe></div>
+	</div>
+	
+
+	
+	
+
+				<div class="form-group-complete">
+			<div class="loading_progress" style="display: none;"><strong>Loading your progress!</strong></div>
+			<br><div class="publish_response"></div>					</div>
+	
+
+<p id="learndash_next_prev_link"><a href="https://my.codakid.com/topic/build-it-part-2/" class="prev-link" rel="prev"><span class="meta-nav">←</span> Previous Lesson</a>				&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://my.codakid.com/topic/a-pigment-of-your-imagination/" class="next-link" rel="next">Next Lesson <span class="meta-nav">→</span></a>	</p>
+</div><div class="video_course_sidebar cc_cursor">
+	<section id="widget_ldcoursenavigation-2" class="widget widget_ldcoursenavigation"><div id="course_navigation">
+    	<div class="learndash_navigation_lesson_topics_list cc_cursor">
+
+						<div class="inactive" id="lesson_list-64714">
+
+                    <div class="list_arrow collapse flippable lesson_completed cc_cursor" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 64714);"></div>
+
+					
+                    <div class="list_lessons cc_cursor">
+						<div class="lesson cc_cursor">
+							<a href="https://my.codakid.com/lessons/chapter-0-getting-started-3/" style="font-size: 12px;">Chapter 0: Getting Started</a>
+						</div> 
+
+													<div id="learndash_topic_dots-64714" class="flip learndash_topic_widget_list" style="display:none">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/intro-to-web-development/" title="Intro to Web Development" style="font-size: 12px;"><span style="font-size: 12px;">Intro to Web Development</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/windows-installation-2/" title="Installation" style="font-size: 12px;"><span style="font-size: 12px;">Installation</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+							<div class="inactive" id="lesson_list-63619">
+
+                    <div class="list_arrow collapse flippable lesson_completed" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 63619);"></div>
+
+					
+                    <div class="list_lessons">
+						<div class="lesson ">
+							<a href="https://my.codakid.com/lessons/chapter-1-welcome-to-web-development/" style="font-size: 12px;">Chapter 1: Getting to Know Atom</a>
+						</div> 
+
+													<div id="learndash_topic_dots-63619" class="flip learndash_topic_widget_list" style="display:none">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/chapter-1-intro-4/" title="Chapter 1 Intro" style="font-size: 12px;"><span style="font-size: 12px;">Chapter 1 Intro</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/getting-to-know-atom/" title="Getting to Know Atom" style="font-size: 12px;"><span style="font-size: 12px;">Getting to Know Atom</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+							<div class="inactive" id="lesson_list-63623">
+
+                    <div class="list_arrow collapse flippable lesson_completed" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 63623);"></div>
+
+					
+                    <div class="list_lessons">
+						<div class="lesson ">
+							<a href="https://my.codakid.com/lessons/chapter-2-the-building-blocks/" style="font-size: 12px;">Chapter 2: The Building Blocks</a>
+						</div> 
+
+													<div id="learndash_topic_dots-63623" class="flip learndash_topic_widget_list" style="display:none">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/chapter-2-intro-3/" title="Chapter 2 Intro" style="font-size: 12px;"><span style="font-size: 12px;">Chapter 2 Intro</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/setting-a-foundation/" title="What is HTML?" style="font-size: 12px;"><span style="font-size: 12px;">What is HTML?</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/the-sacred-texts/" title="The Sacred Texts" style="font-size: 12px;"><span style="font-size: 12px;">The Sacred Texts</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/put-it-on-the-list/" title="Put It On the List" style="font-size: 12px;"><span style="font-size: 12px;">Put It On the List</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/the-legend-of-links/" title="The Legend of Links" style="font-size: 12px;"><span style="font-size: 12px;">The Legend of Links</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/picture-that/" title="Picture That" style="font-size: 12px;"><span style="font-size: 12px;">Picture That</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+							<div class="active learndash-current-menu-ancestor " id="lesson_list-63626">
+
+                    <div class="list_arrow expand flippable lesson_incomplete cc_cursor" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 63626);"></div>
+
+					
+                    <div class="list_lessons">
+						<div class="lesson ">
+							<a href="https://my.codakid.com/lessons/chapter-3-do-it-with-style/" style="font-size: 12px;">Chapter 3: Do It With Style</a>
+						</div> 
+
+													<div id="learndash_topic_dots-63626" class="flip learndash_topic_widget_list" style="">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/chapter-3-intro-3/" title="Chapter 3 Intro" style="font-size: 12px;"><span style="font-size: 12px;">Chapter 3 Intro</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/coding-with-style/" title="What is CSS?" style="font-size: 12px;"><span style="font-size: 12px;">What is CSS?</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/please-contain-yourself/" title="Please, Containerize Yourself" style="font-size: 12px;"><span style="font-size: 12px;">Please, Containerize Yourself</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-1/" title="Build It!- Part 1" style="font-size: 12px;"><span style="font-size: 12px;">Build It!- Part 1</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-2/" title="Build It!- Part 2" style="font-size: 12px;"><span style="font-size: 12px;">Build It!- Part 2</span></a></span>
+																						</li>
+																						<li class="learndash-current-menu-item">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/build-it-part-3/" title="Build It!- Part 3" style="font-size: 12px;"><span style="font-size: 12px;">Build It!- Part 3</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-completed" href="https://my.codakid.com/topic/a-pigment-of-your-imagination/" title="A Pigment of Your Imagination" style="font-size: 12px;"><span style="font-size: 12px;">A Pigment of Your Imagination</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+							<div class="inactive" id="lesson_list-63628">
+
+                    <div class="list_arrow collapse flippable lesson_incomplete" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 63628);"></div>
+
+					
+                    <div class="list_lessons">
+						<div class="lesson ">
+							<a href="https://my.codakid.com/lessons/chapter-4-make-it-interactive/" style="font-size: 12px;">Chapter 4: Make It Interactive</a>
+						</div> 
+
+													<div id="learndash_topic_dots-63628" class="flip learndash_topic_widget_list" style="display:none">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/chapter-4-intro-3/" title="Chapter 4 Intro" style="font-size: 12px;"><span style="font-size: 12px;">Chapter 4 Intro</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/raising-the-nav-bar/" title="Raising the Nav Bar" style="font-size: 12px;"><span style="font-size: 12px;">Raising the Nav Bar</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/turn-the-page/" title="Turn the Page" style="font-size: 12px;"><span style="font-size: 12px;">Turn the Page</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/little-house-on-the-query/" title="Little House on the Query" style="font-size: 12px;"><span style="font-size: 12px;">Little House on the Query</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/pseudo-classes-yup/" title="Pseudo Classes... yup" style="font-size: 12px;"><span style="font-size: 12px;">Pseudo Classes... yup</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+							<div class="inactive" id="lesson_list-63630">
+
+                    <div class="list_arrow collapse flippable lesson_incomplete" onclick="return flip_expand_collapse(&quot;#lesson_list&quot;, 63630);"></div>
+
+					
+                    <div class="list_lessons">
+						<div class="lesson ">
+							<a href="https://my.codakid.com/lessons/chapter-5-wrap-it-up/" style="font-size: 12px;">Chapter 5: Wrap It Up</a>
+						</div> 
+
+													<div id="learndash_topic_dots-63630" class="flip learndash_topic_widget_list" style="display:none">
+								<ul>								
+																				<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/chapter-5-intro-3/" title="Chapter 5 Intro" style="font-size: 12px;"><span style="font-size: 12px;">Chapter 5 Intro</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/psa-revisiting-web-dev-safety/" title="PSA- Revisiting Web Dev Safety" style="font-size: 12px;"><span style="font-size: 12px;">PSA- Revisiting Web Dev Safety</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/publishing-our-site/" title="Publishing Our Site" style="font-size: 12px;"><span style="font-size: 12px;">Publishing Our Site</span></a></span>
+																						</li>
+																						<li class="">
+												<span class="topic_item"><a class="topic-notcompleted" href="https://my.codakid.com/topic/a-conclusion-to-web-development-1/" title="A Conclusion to Web Development 1" style="font-size: 12px;"><span style="font-size: 12px;">A Conclusion to Web Development 1</span></a></span>
+																						</li>
+																			</ul>
+							</div>
+											</div>
+				</div>
+				
+
+			
+			</div> <!-- Closing <div class='learndash_navigation_lesson_topics_list'> -->
+		
+	 
+		<div class="widget_course_return">
+			Return to            <a href="https://my.codakid.com/courses/web-development-1/">Web Development 1</a>
+		</div>
+	
+</div> <!-- Closing <div id='course_navigation'> -->
+</section></div>
+<script>
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+    var url = iframe.src;
+    var videoTime = localStorage.getItem(url)? localStorage.getItem(url):0;
+	var videoSeconds = ( + "").toString();
+		
+    //get video progress
+    player.on('timeupdate', function(data){
+        localStorage.setItem(url,data.seconds);
+    });
+    player.on('ended', function(){
+        //start video from begining
+        localStorage.setItem(url,0);
+    });
+
+    if(videoTime > 0){
+		jQuery('.loading_progress').show();
+        player.setCurrentTime(videoTime).then(function() {
+			jQuery('.loading_progress').hide();
+            return player.pause();
+        });
+    }
+
+
+	if(videoSeconds) {
+		var videoSecondsList = videoSeconds.split(',');
+		
+		videoSecondsList.forEach(function(elem) {
+			player.addCuePoint(elem, {
+			}).then(function(id) {
+				// cue point was added successfully
+			}).catch(function(error) {
+				//
+			});
+		});
+	}
+
+	player.on('cuepoint', function(data){
+		player.pause();	
+	});
+
+	player.on('pause', function(data) {
+		jQuery('#play-button').css('opacity', 1);
+	});
+	
+	player.on('play', function(data) {
+		jQuery('#play-button').css('opacity', 0);
+	});
+ 
+	videoExtraButtonsStyle();	
+
+	jQuery('iframe').hover(function() {
+		jQuery('#rewind-button').toggleClass("show-button-rewind");
+	});
+
+	function skipbck(){
+		player.getCurrentTime().then(function(sec) {
+			var rwd = (sec > 15 ? (sec-15) : 0);
+			player.setCurrentTime(rwd)
+		});
+	}
+
+	function videoExtraButtonsStyle() {
+		var iframeHeight = jQuery('iframe').height();
+		jQuery('#rewind-button').css('margin-top', (iframeHeight - 100));
+		jQuery('#play-button').css('margin-top', (iframeHeight / 2 - 46));
+	}
+
+	function playVideo() {
+		player.play().then(function() {			
+		}).catch(function(error) {			
+		});
+	}
+
+	jQuery(window).resize(function () { 
+		videoExtraButtonsStyle();        
+    });
+	
+</script>
+</div>	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+</div><!-- #page -->
+
+<script data-cfasync="false">
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      var logout_link = document.querySelectorAll('a[href*="wp-login.php?action=logout"]');
+      if (logout_link) {
+        for(var i=0; i < logout_link.length; i++) {
+          logout_link[i].addEventListener( "click", function() {
+            Intercom('shutdown');
+          });
+        }
+      }
+    }
+  };
+</script>
+<script data-cfasync="false">
+  window.intercomSettings = {"app_id":"wvepyczd","email":"debszy4@yahoo.com","name":"Debbie Kaplan","user_hash":"de35929ccabfce4e90dbb668f359766dfe1d2f9ae24502f69c217e7b00ae8771"};
+</script>
+<script data-cfasync="false">(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/wvepyczd';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>    <script type="text/javascript">
+    jQuery('body').on('click',".simple_cart_remove",function (e){
+        e.preventDefault();
+        var self = jQuery(this);
+        var product_id = self.attr("data-product-id");
+        jQuery('#checkout_cross_products_sell').empty();
+
+        jQuery.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/wp-admin/admin-ajax.php",
+            data: { action: "product_remove", 
+                    product_id: product_id
+            },
+            beforeSend: function(){
+                jQuery('.checkout_simple_cart_details').addClass('checkout_cart_load_items');
+            },
+            success: function(data){
+                    jQuery(document.body).trigger("load_cross_sell_cart_refresh", [product_id]);
+                    jQuery(document.body).trigger("simple_cart_refresh");                             
+            }
+        });
+
+        return false;
+    });
+    jQuery('body').on('click',".simple_cart_add",function (e){
+        e.preventDefault();
+        var self = jQuery(this);
+        var product_id = self.attr("data-product-id");
+
+        jQuery.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/wp-admin/admin-ajax.php",
+            data: { action: "simple_product_add", 
+                    product_id: product_id
+            },
+            beforeSend: function(){
+                jQuery('.checkout_simple_cart_details').addClass('checkout_cart_load_items');
+            },
+            success: function(data){
+                    jQuery(document.body).trigger("simple_cart_refresh");                     
+                    self.closest('.checkout_simple_cart_row').remove(); 
+                    var total = jQuery( "#checkout_cross_products_sell .checkout_simple_cart_row" ).length;
+                    
+                    if(total === 0){
+                        jQuery( "#checkout_cross_products_sell").empty(); 
+                    }
+                                
+            }
+        });
+
+        return false;
+    });
+    jQuery(document.body).on( "simple_cart_refresh", function( event) {
+        jQuery(document.body).trigger("update_checkout");  
+
+        jQuery.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: "/wp-admin/admin-ajax.php",
+            data: { action: "simple_cart_details"},
+            beforeSend: function(){
+                jQuery('.checkout_simple_cart_details').addClass('checkout_cart_load_items');
+            },
+            success: function(response){
+                jQuery('.checkout_simple_cart_details').replaceWith(response);  
+                var total = jQuery('.checkout_simple_cart_details .checkout_simple_cart_row' ).length;   
+                var http_referer = jQuery('#checkout_referer').text();
+                jQuery('#cart-count').text(total);
+                if(total === 0){
+                        window.location.href = http_referer;
+                }    
+            }
+        });
+    });
+    jQuery(document.body).on( "load_cross_sell_cart_refresh", function( event, product_id) {
+        jQuery.ajax({
+            type: 'POST',
+            dataType: 'html',
+            url: "/wp-admin/admin-ajax.php",
+            data: { 
+                action: "load_checkout_cross_sell_cart_details",
+                product_id: product_id
+            },
+            success: function(response){
+                jQuery('#checkout_cross_products_sell').html(response);  
+            }
+        });
+    });
+    jQuery('body').on('click','.checkout_cross_products_sell_row .fa-times', function(e){
+        e.preventDefault();
+        jQuery('#checkout_cross_products_sell').empty();
+    })
+    jQuery('body').on('click','#simple_btn_proceed_to_checkout', function(e){
+        e.preventDefault();
+        jQuery('#billing_first_name').focus();
+    })
+    </script>
+
+<!-- Facebook Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=267790463565630&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+    <link rel="stylesheet" id="badgeos-front-css" href="./Build It!- Part 3 – CodaKid_files/badgeos-front.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var php_data = {"ac_settings":{"tracking_actid":223410813,"site_tracking_default":1,"site_tracking":1},"user_email":"debszy4@yahoo.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/site_tracking.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/ckeditor.js(1).download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sfwd_data = {"json":"{\"ajaxurl\":\"https:\\\/\\\/my.codakid.com\\\/wp-admin\\\/admin-ajax.php\"}"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/learndash_template_script.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/topic\/build-it-part-3\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/my.codakid.com\/checkout\/","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/add-to-cart.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/jquery.blockUI.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/js.cookie.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/topic\/build-it-part-3\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/woocommerce.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/topic\/build-it-part-3\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_689169f02027415f33073235b761cd8f"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/cart-fragments.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/foundation.min.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/jquery.mask.min.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/theme.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/jquery.fireworks.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/pair-select.min.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/user-account.js.download"></script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/wp-embed.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var icegram_pre_data = {"ajax_url":"https:\/\/my.codakid.com\/wp-admin\/admin-ajax.php","post_obj":{"is_home":false,"page_id":63668,"action":"display_messages","shortcodes":[],"cache_compatibility":"no","device":"laptop"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/main.min.js.download"></script>
+    
+<script type="text/javascript">
+(function() {
+var avm = document.createElement('script'); avm.type = 'text/javascript';
+avm.async = true;
+avm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +
+'cdn.avmws.com/1015781/';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(avm,
+s);
+})();
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '267790463565630');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=267790463565630&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<form method="post" id="wcaiocc-currency-form" style="display:none"><input id="wcaiocc-currency-input" type="text" name="wcaiocc_change_currency_code"></form><script type="text/javascript" id="">var subscribersSiteId="3830c041-9253-41c2-b7f6-e1f2e34d2924";</script>
+<script type="text/javascript" id="" src="./Build It!- Part 3 – CodaKid_files/subscribers.js.download"></script><div style="display: none; visibility: hidden;">
+<script type="text/javascript" src="./Build It!- Part 3 – CodaKid_files/api.min.js.download" data-account="1323" data-user="11023" async="null"></script>
+</div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Build It!- Part 3 – CodaKid_files/box-b736908ce6b0e933fad3a2e45df61b38.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe src="./Build It!- Part 3 – CodaKid_files/pixel.html" style="display: none !important;"></iframe><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" title="Intercom" src="./Build It!- Part 3 – CodaKid_files/saved_resource.html"></iframe><div id="intercom-css-container"><style data-emotion="intercom-global"></style><style data-emotion="intercom"></style></div><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><iframe allowfullscreen="" class="intercom-launcher-frame intercom-35qf63 e1ur5zlj0" name="intercom-launcher-frame" title="Intercom live chat" data-intercom-frame="true" src="./Build It!- Part 3 – CodaKid_files/saved_resource(1).html"></iframe><div id="intercom-modal-container"></div></div></div></body></html>

@@ -1,0 +1,177 @@
+/* * * START CSS TIPS * * *
+  * Great places to learn about CSS
+  * * https://css-tricks.com
+  * * https://www.w3schools.com/
+  * * https://www.google.com/
+  * List of available CSS properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+  * List of shorthand properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties
+  * Directory paths: https://css-tricks.com/quick-reminder-about-file-paths/
+  * To know which browsers support what property: https://caniuse.com/
+  * Alphabetizing your CSS properties makes for easier reading
+  * Indenting by 2 spaces helps for readability
+  * When developing with CSS use classes as much as possible leave id(s) for Javascript
+  * Give everything a meaningful name
+  * By default all elements are set to position:static: Default value. Elements render in order, as they appear in the document flow
+  * Single property items can be on the same line as enclosing bracket { } saves on whitespace while developing
+  * Whitespace is ignored, will not render in HTML file
+  * Every property should end with a semi colon
+  * Remember to compress your imagery: https://enviragallery.com/9-best-free-image-optimization-tools-for-image-compression/ no one want to wait and download a 1 MB image on a mobile device
+  * Fonts - web safe fonts will give you the most speed when someone is trying to view your site at an airport, museum, in a canyon - somewhere there is a slow connection, not everyone travels at the same speed
+ * * * END CSS TIPS * * */
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Special Elite', cursive;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  padding: 0;
+  min-height: 100%;
+
+  margin-top: 0px;
+  margin-bottom: -70px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  width:50%;
+  height: auto;
+}
+
+
+
+header {
+  background-color: rgb(222, 255, 0);
+  /* don't forget about hexcolors*/
+}
+
+header div {
+  width: 80%;
+
+  padding-top: 30px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-right: 0;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-logo {
+  color: lightblue;
+  background-color: black;
+
+  font-family: 'arial black', arial, helvetica, sans-serif;
+
+  font-size: 6vh;
+
+  margin-left: 5%;
+  text-decoration: none;
+  position: relative;
+
+
+
+}
+
+.page-title {
+font-family: 'Cambria', times, serif;
+font-size: 5vh;
+padding-left: 1%;
+postion: relative;
+
+}
+
+section {
+  background-image: url("..\\Images\\glagges.jpg");
+  background-size: 30% 20%;
+  background-repeat: repeat;
+  min-height: 800px;
+  padding-top: 50px;
+}
+
+
+
+
+nav {
+  left: 25px;
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+nav a {
+  color: #ffffff;
+  font-family: 'arial black', arial, sans-serif;
+  padding: 0.5vh;
+  text-decoration: none;
+
+  background-color: black;
+}
+
+.nav-home {background-color: black;}
+
+.nav-my-videos {background-color: black;}
+
+.nav-about-my-channel {background-color: black;}
+
+.nav-my-photoshop {background-color: black;}
+
+
+.nav-home:hover {background-color: yellow; color: black;}
+.nav-my-videos:hover {background-color: yellow; color: black;}
+.nav-about-my-channel:hover {background-color: yellow; color: black;}
+.nav-my-photoshop:hover {background-color: yellow; color: black;}
+
+nav a {
+  transition: background-color 0.5s ease;
+}
+
+.content{
+  background-color: rgba(232, 233, 235, 0.8);
+
+    margin: auto;
+    min-height: 700px;
+    padding: 50px;
+    width: 80%;
+}
+
+footer {
+  positon: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 70px;
+}
+
+footer div {
+  position: absolute;
+  right: 0;
+  width: 112px;
+  z-index: 1;
+}
+
+a {
+  padding-left: 50px;
+}
+
+.youtube-icon {
+  background-image: url("..\\Images\\youtube 2.jfif");
+}
+
+footer div a {
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 50px;
+  overflow: hidden;
+  text-indent: 101%;
+  width: 50px;
+}

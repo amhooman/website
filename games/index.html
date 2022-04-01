@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>n1swordslasher</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="style2.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="media-queries.css">
+    <meta name="viewport" content="width=device-width">
+
+  </head>
+
+  <body>
+    <div class="container">
+    <header>
+      <div>
+        <span class="logo-content">
+          <a href="index.html" class= "main-logo">Slash Flash</a>
+        </span>
+      </div>
+    </header>
+
+
+<section>
+
+  <nav>
+    <a href="../index.html" class="nav-home"> home page </a>
+
+    <a href="../my-videos.html" class="nav-my-videos"> my videos </a>
+
+    <a href="../my-flipnotes.html" class="nav-my-videos"> my flipnotes </a>
+
+    <a href="index.html" class="nav-my-photoshop"> Games </a>
+
+    <a href="../chat/index.html" class="nav-home"> chat </a>
+
+    <a href="../more.html" class="nav-home"> more </a>
+  </nav>
+
+
+            <div class="content">
+              <!DOCTYPE html>
+              <html lang="en">
+              
+              <head>
+                  <title>Slash Flash</title>
+                  <meta charset='utf-8'>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+                  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+                  <link rel="stylesheet" type="text/css" href="style2.css">
+                  <!-- Global site tag (gtag.js) - Google Analytics -->
+                  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q473F59QW1"></script>
+                  <script>
+                      window.dataLayer = window.dataLayer || [];
+              
+                      function gtag() {
+                          dataLayer.push(arguments);
+                      }
+                      gtag('js', new Date());
+              
+                      gtag('config', 'G-Q473F59QW1');
+                  </script>
+                  <meta name="google-site-verification" content="0zuWIkB3Ldo2MPpwfLTnPQ0Uk6xHb_khG_l5Jpj9d58" />
+                  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+              
+                  <!--Favicon Information-->
+                  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=bOXjlPdAPj">
+                  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png?v=bOXjlPdAPj">
+                  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png?v=bOXjlPdAPj">
+                  <link rel="manifest" href="favicon/site.webmanifest?v=bOXjlPdAPj">
+                  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg?v=bOXjlPdAPj" color="#f1c40f">
+                  <link rel="shortxcut icon" href="favicon/favicon.ico?v=bOXjlPdAPj">
+                  <meta name="msapplication-TileColor" content="#2b5797">
+                  <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=bOXjlPdAPj">
+                  <meta name="theme-color" content="#ffffff">
+              
+                  <!-- Primary Meta Tags -->
+                  <meta name="title" content="Slash Flash">
+                  <meta name="description" content="Slash's page">
+                  <meta name="keywords" content="EEE">
+                  <meta name="author" content="n1swordslasher">
+              
+                  <!-- Open Graph / Facebook -->
+                  <meta property="og:type" content="website">
+                  <meta property="og:title" content="Slash Flash">
+                  <meta property="og:description" content="Online Education Games">
+              
+                  <!-- Twitter -->
+                  <meta property="twitter:card" content="summary_large_image">
+                  <meta property="twitter:title" content="Slash Flash">
+                  <meta property="twitter:description" content="Online Education Games">
+              
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9625185952084057" crossorigin="anonymous"></script>
+              </head>
+              
+              <body>
+                  <div class="header">
+                  </div>
+                  <hr>
+                  <div class="search-container">
+                      <input type="text" id="gameFinder" onkeyup="gameFinder()" placeholder="Search for games" title="Type in a game">
+                      <script>
+                          function gameFinder() {
+                              var input, filter, ul, li, a, i, txtValue;
+                              input = document.getElementById("gameFinder");
+                              filter = input.value.toUpperCase();
+                              ul = document.getElementById("Games");
+                              li = ul.getElementsByTagName("li");
+                              for (i = 0; i < li.length; i++) {
+                                  a = li[i].getElementsByTagName("a")[0];
+                                  txtValue = a.textContent || a.innerText;
+                                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                      li[i].style.display = "";
+                                  } else {
+                                      li[i].style.display = "none";
+                                  }
+                              }
+                          }
+                      </script>
+                  </div>
+                  <hr>
+                  <h1 id="top">
+                  <div class="Games" id="Games">
+                    <p>My entire Website got corrupted, I have to reupload it file by file. Most games won't work, please be patient as this may take a while to reupload. FRICK YOU CPANEL!</p>>
+                    <h2><a href="../games/all.html">Collapse All</a></h2>
+                    <br>
+                    <p>Go to:(NEW!)</p>
+                    <h4><a href="../games/index.html#cp">Club Penguin</a></h4>
+                    <h4><a href="../games/index.html#html">Html and other non Flash Games</a></h4>
+                    <ul>
+                      <h5><a href="../games/index.html#fnf">Friday Night Funkin'</a></h5>
+                    </ul>
+                    <ul>
+                      <h5><a href="../games/index.html#simp">Easier to Learn Games</a></h5>
+                    </ul>
+                    <ul>
+                      <h5><a href="../games/index.html#ut">undertale related games</a></h5>
+                    </ul>
+                    <h4><a href="../games/index.html#ut">Arcade Games</a></h4>
+                    <h4><a href="../games/index.html#flash">Flash Games</a></h4>
+                    <h4><a href="../games/index.html#emulation">Emulation</a></h3></h1><h4>
+                      <h2>Music</h2>
+                      <ul>
+                          <li><a href="../games/Imabanana/">I'm a banana</a></li>
+                          <li><a href="../games/justabitcrazy/">Just a bit crazy (Eddsworld)</a></li>
+                          <li><a href="../games/silent scream/">Silent Scream - Slayer (a SILENT SCREAM to the loss of EVERY FILE ON MY SITE!)</a></li>
+
+                      </ul>
+                      <h1 id="cp"></h1>
+                      <h2>Club Penguin</h2>
+                      <ul>
+                        <li><a href="https://cprewritten.net/" target="_blank">Club Penguin Rewritten<span class="material-icons">launch</span></a></li>
+                          <li><a href="../games/puffleroundup/">Puffle Paddle</a></li>
+                          <li><a href="../games/thinice/">Thin Ice</a></li>
+                          <li><a href="../games/cartsurfer/">Cart Surfer</a></li>
+                          <li><a href="../games/pufflesoaker/">Puffle Soaker</a></li>
+                          <li><a href="../games/beancounters/">Bean Counters</a></li>
+                          <li><a href="../games/sledracing/">Sled Racing</a></li>
+                          <li><a href="../games/astro/">Astro Barrier</a></li>
+                          <li><a href="../games/towerdefence/">Tower Defence</a></li>
+                          <li><a href="../games/hydro/">Hydro Hopper</a></li>
+                          <li><a href="../games/gridcommand/">Grid Command</a></li>
+                          <li><a href="../games/mixmaster/">DJ3K</a></li>
+                          <li><a href="../games/icejam/">Ice Jam</a></li>
+                          <li><a href="../games/fish/">Ice Fishing</a></li>
+
+                          
+              
+                      </ul>
+                      <h1 id="html"></h1>
+                      <h2>Html and other non Flash Games</h2>
+                      <ul>
+                          <li><a href="../games/zeldalampshade/">2048</a></li>
+                          <li><a href="../games/cookieclicker/">Cookie Clicker</a></li>
+                          <li><a href="../games/flappybird/">Flappy Bird</a></li>
+                           <li><a href="../games/bound/">Boxel Rebound</a></li>
+                          <li><a href="../games/spelunky/">Spelunky</a></li>
+                          <li><a href="../games/retrobowl/">Retro Bowl</a></li>
+                          <li><a href="../games/ctr/">Cut the rope</a></li>
+                          <li><a href="../games/slope/">slope</a></li>
+                          <li><a href="../games/edgesurf/">Microsoft Edge Surf</a></li>
+                          <li><a href="../games/championisland/">Google Champion Island</a></li>
+                          <li><a href="../games/zelda3d/">Zelda 3d</a></li>
+                          <li><a href="../games/neverball/">Neverball</a></li>
+                          <li><a href="../games/breakout/">Breakout</a></li>
+                          <li><a href="../games/asciispace/">Asciispace</a></li>
+                          <li><a href="../games/xx142-b2exe/">xx142-b2.exe</a></li>
+                          <li><a href="../games/hextris/">Hextris</a></li>
+                          <h1 id="simp"></h1>
+                          <h3>More Simple Games</h3>
+                          <ul>
+                          <li><a href="../games/dino/">Chome Dino Game</a></li>
+                          <li><a href="../games/minesweeper/">Minesweeper</a></li>
+                          <li><a href="../games/doodlejump/">doodlejump</a></li>
+                          <li><a href="../games/candy2/">Candy Crush Ripoff</a></li>
+                          <li><a href="../games/cooltactoe/">Ultimate Tic Tac Toe</a></li>
+                          <li><a href="../games/stack/">stack</a></li>
+                          <li><a href="../games/maze/">Maze Generator</a></li>
+                          <li><a href="../games/brickbreaker/">Brick Breaker</a></li>
+                          <li><a href="../games/snakesandladders/">Snakes And Ladders</a></li>
+                          <li><a href="../games/slimefarmer/">Slime Farmer</a></li>
+                          </ul>
+                          <h1 id="fnf"></h1>
+                          <h3>Friday Night Funkin'</h3>
+                          <ul>
+                          <li><a href="../games/fnf2/nightly/index.html">Friday Night Funkin' Kade Engine (no week 7)</a></li>
+                          <li><a href="../games/fnfweek 7/">Friday Night Funkin' Week 7</a></li>
+                          <li><a href="../games/meowfnf">A Cooler (but laggier) version of Friday Night Funkin'</a></li>
+                          <li><a href="../games/mymod">My First Mod of Friday Night Funkin'</a></li>
+                          <li><a href="../games/fnfmobile/">Friday Night Funkin' on mobile</a></li>
+                        </ul>
+                        <h1 id="ut"></h1>
+                        <h3>Undertale</h3>
+                        <ul>
+                          <li><a href="../games/sans/">THE ENTIRE SANS FIGHT!</a></li>
+                          <li><a href="../games/undyne/">Undyne</a></li>
+                          <li><a href="../games/ralsei throw/">ralsei throw</a></li>
+                        </ul>
+                      </ul>
+                      <h1 id="arcade"></h1>
+                      <h2>Arcade Games</h2>
+                      <ul>
+                          <li><a href="../games/mari0/">mari0 (broken link)</a></li>
+                          <li><a href="../games/zeldaseedsofdarkness/">Zelda seeds of darkness</a></li>
+                          <li><a href="../games/megamanprojectx/">Megaman Project X</a></li>
+                          <li><a href="../games/ultimateflashsonic/">Ultimate Flash Sonic</a></li>
+                          <li><a href="../games/portal/">Portal: The Flash Version</a></li>
+                          <li><a href="../games/galaga/">Galaga</a></li>
+                          <li><a href="../games/frogger/">Frogger</a></li>
+                          <li><a href="../games/snake/">snake</a></li>
+                          <li><a href="../games/asteroids/">asteroids</a></li>
+                          <li><a href="../games/turbospirit/">Turbo Spirit</a></li>
+                          <li><a href="../games/alienhominid/">Space Invaders</a></li>
+                          <li><a href="../games/mortalkombat/">Mortal Kombat</a></li>
+                          <li><a href="../games/tetris/">Tetris</a></li>
+                          <li><a href="../games/flashpacman/">Flash Pacman</a></li>
+                          <li><a href="../games/donkeykong/">Donkey Kong Flash</a></li>
+                          <li><a href="../games/celeste/">Celeste</a></li>
+                          <li><a href="../games/celeste2/">Celeste 2</a></li>
+
+                        </ul>
+                        <h1 id="flash"></h1>
+                        <h2>Flash Games</h2>
+                        <ul>
+                          <li><a href="../games/ngr/">Newgrounds Rumble</a></li>
+                          <li><a href="../games/lineriders/">Line Riders</a></li>
+                          <ul>
+                              <li><a href="../games/lineriders/linerider/">Line Rider</a></li>
+                              <li><a href="../games/lineriders/linerider2/">Line Rider 2</a></li>
+                          </ul>
+                          <li><a href="../games/pedaltometal/">Pedal to the Medal</a></li>
+                          <ul>
+                           <li><a href="../games/bloonTDs/bloonTD2/">Super Meat Boy</a></li>
+                            <li><a href="../games/bloonTDs/bloonTD3/">Madness Accelerant</a></li>
+                            <li><a href="../games/bloonTDs/bloonTD4/">Max Dirt Bike</a></li>
+                            <li><a href="../games/bloonTDs/bloonTD5/">Not So Special Stage (Eddsworld)</a></li>
+                            <li><a href="../games/bangboomsplat/">Bang, Boom, Splat (Eddsworld)</a></li>
+                          </ul>
+                          <li><a href="../games/worldhardestgame/">The World Hardest Game</a></li>
+                          <li><a href="../games/worldhardestgame2/">The World Hardest Game 2</a></li>
+                          <li><a href="../games/bloxors/">bloxors</a></li>
+                          <li><a href="../games/onlylevel/">This is the Only Level</a></li>
+                          <li><a href="../games/alienhominid2/">Alien Hominid</a></li>
+                          <li><a href="../games/dadnme/">Dad n Me</a></li>
+                          <li><a href="../games/ageofwar/">Age of War</a></li>
+						              <li><a href="../games/mygame/">My game (still in beta)</a></li>
+                          <li><a href="../games/thereisnogame/">There Is No Game</a></li>
+                          <ul>
+                            <li><a href="../games/riddleschool/year1/">Riddle School - Year 1</a></li>
+                            <li><a href="../games/riddleschool/year2/">Riddle School - Year 2</a></li>
+                            <li><a href="../games/riddleschool/year3/">Riddle School - Year 3</a></li>
+                            <li><a href="../games/riddleschool/year4/">Riddle School - Year 4</a></li>
+                            <li><a href="../games/riddleschool/year5/">Riddle School - Year 5</a></li>
+                            <li><a href="../games/riddleschool/year6/">Riddle Transfer - (Year 6)</a></li>
+                            <li><a href="../games/riddleschool/year7/">Riddle Transfer 2 - (Year 7)</a></li>
+                        </ul>
+                        <li><a href="../games/whateverflashyouwant/">Whatever Flash Game You Want</a></li>
+                        </ul>
+                        <h1 id="emulation"></h1>
+                        <h2>Emulation</h2>
+                        <ul>
+                          <li><a href="../games/doom/">Doom</a></li>
+                          <li><a href="../games/doom2/">Doom II</a></li>
+                          <li><a href="../games/gameboy/">Gameboy</a></li>
+                          <li><a href="../games/nes/">NES</a></li>
+                          <li><a href="../games/snes2/">SNES</a></li>
+                          <li><a href="../games/n64/">Nintendo 64</a></li>
+                          <li><a href="../games/nds/">Nintendo DS</a></li>
+                      </ul>
+                      <h3><a href="#top">Go to Top</a></h3>
+                  </div>
+                  <hr>
+                  
+                  </script>
+              </body>
+              
+              </html>
+          </div>
+        </section>
+
+      <footer>
+        <div>
+          <a class="youtube-icon" target="blank_" href="https://www.youtube.com/channel/UCtIjiwvgeh0cDu4v8flz8aA">My channel</a>
+        </div>
+
+      </footer>
+    </div>
+  </body>
+
+
+</html>

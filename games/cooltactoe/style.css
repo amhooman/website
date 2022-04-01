@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background-image: url("bg.png");
+}
+
+.little_table.live,
+.big_table.live {
+    border: 1px yellow solid;
+}
+
+.little_table td {
+    border: 1px black solid;
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+.big_table {
+    border: 1px transparent solid;
+    margin: 0 auto 20px;
+    width: 600px;
+    height: 600px;
+}
+
+.little_table {
+    border: 1px transparent solid;
+    width: 100%;
+    height: 100%;
+}
+
+td.red {
+    background-color: ;
+}
+
+td.blue {
+    background-color: #aaaaff;
+}
+
+.little_table td.filled {
+    cursor: cursor;    
+}
+
+.blue {
+    background-color: #010026;
+    color: #010021;
+}
+
+.red {
+    background-color: #800000;
+    color: #260000;
+}
+
+div.marker {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+#turn {
+    width: 560px;
+    margin: auto;
+    box-shadow: 0 0 5px 5px #0A0A0A;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    font-family: Arial;
+    text-shadow: 1px 1px 2px #ffffff;
+}
+
+#newGame {
+    width: 400px;
+    margin: auto;
+    font-size: 40px;
+    font-family: Arial;
+    text-shadow: 1px 1px 2px #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px 5px #0A0A0A;
+    background-color: #08A300;
+    color: #056900;
+    text-shadow: 1px 1px 2px #ffffff;
+    border: none;
+    display: none;
+    cursor: pointer;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head>
+	<title>Minesweeper</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-US" />
+	<meta content="all" name="robots" />
+	<meta name="title" content="" />
+	<meta name="author" content="VincentChen" />
+	<meta name="subject" content="" />
+	<meta name="language" content="en-US" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="" type="image/x-icon" />
+	<link rel="shortcut icon" href="" type="image/x-icon" /> 
+	<link rel="stylesheet" href="Mine.Style.css" type="text/css" media="all"  />
+	<script language="JavaScript" type="text/javascript" src="Mine.Code.js"></script>
+</head>
+<body>
+<div id="playground">
+</div>
+<script language="JavaScript" type="text/javascript">
+<!--
+	var the_row = 8,the_col = 8,the_mine = 10;
+	var num_arr;
+	var queryStr = document.location.search;
+	//var pat = /^\?{1}row=(\d+)\&{1}col=(\d+)\&{1}mine=(\d+)$/ig;
+	//regx to match the entire query string
+	var pat = /\d+/ig;
+	num_arr = queryStr.match(pat);
+	if(num_arr != null)
+	{
+		the_row = num_arr[0];
+		the_col = num_arr[1];
+		the_mine = num_arr[2];	
+	}
+	startMinesweeper(the_row,the_col,the_mine);
+	
+	function closeWindow()
+	{
+		window.open('', '_self', ''); //bug fix for Chrome
+		window.close();
+	}
+//-->
+</script>
+<p>
+<input type="button" value="Restart!" onclick="location.href='index.html';" />
+<input type="button" value="I'm tired!" onclick="javascript:closeWindow();" />
+</p>
+<p>
+Icon Descriptions:
+</p>
+<table>
+<tr>
+	<td><img src="images/smile.gif" border="0"></td>
+	<td>Take it easy and play carefully!</td>
+</tr>
+<tr>
+	<td><img src="images/win.gif" border="0"></td>
+	<td>You win! Awesome!</td>
+</tr>
+<tr>
+	<td><img src="images/blast.gif" border="0"></td>
+	<td>You lose...</td>
+</tr>
+<tr>
+	<td><img src="images/error.gif" border="0"></td>
+	<td>You have tagged a wrong place.</td>
+</tr>
+<tr>
+	<td><img src="images/flag.gif" border="0"></td>
+	<td>There is a mine here.</td>
+</tr>
+<tr>
+	<td><img src="images/bomb.gif" border="0"></td>
+	<td>This is a dangerous mine!</td>
+</tr>
+</table>
+<p>
+&copy;2012 <a href="http://vincentchen.me">vincentchen.me</a> All Right Reserved.
+</p>
+</body>
+</html>

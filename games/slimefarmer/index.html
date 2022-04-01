@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+  <head>
+    <style>
+    div {
+      max-width: 30%;
+      padding: 25px;
+      background-color: linen;
+      margin: auto;
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Slime Farmer</title>
+  </head>
+  <body>
+    <div>
+    <p id="totalCash" style="border: 3px solid green;">$1</p>
+    <p id="GreenJellies" style="border: 3px solid DarkSeaGreen;">0 Green Jellies</p>
+    <p id="BlueJellies" style="border: 3px solid dodgerblue;">0 Blue Jellies</p>
+    <button onclick="sellJellies()">Sell Jellies</button>
+    <button onclick="upgradeRefinery()" id="JellyRefinery">Uprade Jelly Refinery (Lvl: 1) Cost: 10 </button>
+    <button onclick="buyGreenSlime()" id="BuyGreenSlime">Buy a Green Slime (No: 1) Cost: 100 </button>
+    <button onclick="buyBlueSlime()" id="BuyBlueSlime">Buy a Blue Slime (No: 0) Cost: 1000 </button>
+    </div>
+    <script src="main.js" charset="utf-8" type="text/javascript"></script>
+  </body>

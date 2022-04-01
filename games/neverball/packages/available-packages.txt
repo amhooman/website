@@ -1,0 +1,40 @@
+package set-iLevels
+filename set-iLevels-e6d5c9d7b3a4dddf1ab8a57b0cdfab90.zip
+size 9412953
+files set-iLevels.txt
+name Reshaun's iLevels
+desc Difficulty: Easy through Hard\\The Unofficial Level Set\Author: Reshaun Francis
+shot set-iLevels-d9b5f82e87419a255dea2eabe93d9ddd.png
+
+package set-iLevels2
+filename set-iLevels2-dac116313ba1284543602cc07a50654c.zip
+size 9341560
+files set-iLevels2.txt
+name Reshaun's iLevels Suite
+desc Difficulty: Normal through Advanced\\The Unofficial Insanity Level Set\Author: Reshaun Francis
+shot set-iLevels2-fd92e2ae5dc0d61aa0275bfbb17ab7db.png
+
+package set-iLevels3
+filename set-iLevels3-25cbfa7d02a83dd5111ab714fc57286e.zip
+size 9370769
+files set-iLevels3.txt
+name Reshaun's iLevels Pro
+desc Difficulty: Advanced through Expert\\The Unofficial Impossible Level Set\Author: Reshaun Francis
+shot set-iLevels3-adb0e963b6c9ae4ac9971debc63dd756.png
+
+package set-iLevels4
+filename set-iLevels4-70c9371ccf52ef549d930ef29d3db9e2.zip
+size 8783501
+files set-iLevels4.txt
+name Reshaun's iLevels Hardcore
+desc Difficulty: Expert through Insane\\The Unofficial Extreme Level Set\Author: Reshaun Francis
+shot set-iLevels4-96988d09ebb94e7aaaa1f2d7b1cea770.png
+
+package set-iLevels5
+filename set-iLevels5-5dbe7aa2c4590da346f4a7350c812f53.zip
+size 6959918
+files set-iLevels5.txt
+name Reshaun's iLevels Tough
+desc Difficulty: Insane through Impossible\\The Unofficial Strong Level Set\Author: Reshaun Francis
+shot set-iLevels5-487d7c9a61918f522d8117f0cbfeeaad.png
+

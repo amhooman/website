@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Slash Flash</title>
+    <script src="jquery-1.4.1.min.js"></script>
+    <script src="vector_battle_regular.typeface.js"></script>
+    <script src="ipad.js"></script>
+    <script src="game.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <style>
+	  body {background-color: #fff;}
+    
+      #canvas { border:1px solid black; top:0px; left:0px; background-color: #fff;}
+      .button { position:absolute; border:1px solid black; }
+      #left-controls { position:absolute; left:1px; bottom:0px; display:none; }
+      #right-controls { position:absolute; right:1px; bottom:0px; display:none; }
+      #up { width:200px; height:100px; bottom:100px;}
+      #left { width:100px; height:100px; bottom:0px;}
+      #right { width:100px; height:100px; bottom:0px; left:100px; }
+      #space { width:200px; height:200px; bottom:0px; right:0px; }
+      @import url("bootstrap/bootstrap.css");
+body {
+    font-family: roboto;
+    word-spacing: 2px;
+    margin-left: 50px !important;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+footer {
+    text-align: center;
+    background-color: #2e3131;
+    color: #eeeeee;
+    height: 250px;
+    margin-left: -50px !important;
+    margin-bottom: -50px !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.logo {
+    float: left;
+}
+
+img {
+    display: inline-block;
+}
+
+pre {
+    text-align: left;
+}
+
+hr {
+    margin-right: 50px !important;
+}
+
+.header {
+    margin-top: 25px;
+}
+
+.header a:visited,
+.header a:active,
+.header a {
+    color: black;
+}
+
+.header a:hover {
+    color: #2d3436;
+}
+
+ul {
+    text-align: left;
+}
+
+a,
+a:visited,
+a:active {
+    color: #0984e3;
+}
+
+a:hover {
+    color: #74b9ff;
+}
+
+#gameFinder {
+    background-image: url('searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.search-container {
+    margin-right: 50px;
+}
+
+.dosbox_iframe {
+    display: block;
+    border: 0 none;
+    background: transparent;
+    margin: 0 auto;
+}
+
+.ver {
+    text-align: left !important;
+}
+
+.ver a {
+    color: inherit;
+}
+
+.material-icons {
+    font-size: 10px !important;
+}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="../../">
+          <h1>
+              Slash Flash
+          </h1>
+      </a>
+  </div>
+  <hr>
+  <h2>Asteroids Html</h2>
+  <hr>
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Asteroids Html</li>
+      </ol>
+    <div id="game-container" align="center">
+      <canvas id="canvas" width="780" height="540"></canvas>
+      <div id="left-controls">
+        <div id="up" class='button'>THRUST</div>
+        <div id="left" class='button'>LEFT</div>
+        <div id="right" class='button'>RIGHT</div>
+      </div>
+      <div id="right-controls">
+        <div id="space" class='button'>FIRE</div>
+      </div>
+    </div>
+  </body>
+</html>

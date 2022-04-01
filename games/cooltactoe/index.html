@@ -1,0 +1,192 @@
+<html>
+<head>
+    <title>Ultimate Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <table class="big_table live">
+        <tr class="1">
+            <td class="1">
+                <table class="little_table col-1 row-1">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="2">
+                <table class="little_table col-2 row-1">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="3">
+                <table class="little_table col-3 row-1">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="2">
+            <td class="1">
+                <table class="little_table col-1 row-2">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="2">
+                <table class="little_table col-2 row-2">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="3">
+                <table class="little_table col-3 row-2">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="3">
+            <td class="1">
+                <table class="little_table col-1 row-3">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="2">
+                <table class="little_table col-2 row-3">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="3">
+                <table class="little_table col-3 row-3">
+                    <tr class="1">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="2">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                    <tr class="3">
+                        <td class="1"></td>
+                        <td class="2"></td>
+                        <td class="3"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div id="turn" class="blue">
+        Blue&rsquo;s turn&hellip;
+    </div>
+    <button id="newGame" onClick="location.reload();">New game</button>
+</body>

@@ -107,51 +107,50 @@
                   </div>
                   <hr>
                   <div class="search-container">
-                      <input type="text" id="gameFinder" onkeyup="gameFinder()" placeholder="Search for games" title="Type in a game">
-                      <script>
-                          function gameFinder() {
-                              var input, filter, ul, li, a, i, txtValue;
-                              input = document.getElementById("gameFinder");
-                              filter = input.value.toUpperCase();
-                              ul = document.getElementById("Games");
-                              li = ul.getElementsByTagName("li");
-                              for (i = 0; i < li.length; i++) {
-                                  a = li[i].getElementsByTagName("a")[0];
-                                  txtValue = a.textContent || a.innerText;
-                                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                      li[i].style.display = "";
-                                  } else {
-                                      li[i].style.display = "none";
-                                  }
-                              }
-                          }
-                      </script>
+                    <input type="text" id="gameFinder" onkeyup="gameFinder()" placeholder="Search for games" title="Type in a game">
+                    <script>
+                        function gameFinder() {
+                            var input, filter, ul, li, a, i, txtValue;
+                            input = document.getElementById("gameFinder");
+                            filter = input.value.toUpperCase();
+                            ul = document.getElementById("Games");
+                            li = ul.getElementsByTagName("li");
+                            for (i = 0; i < li.length; i++) {
+                                a = li[i].getElementsByTagName("a")[0];
+                                txtValue = a.textContent || a.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    li[i].style.display = "";
+                                } else {
+                                    li[i].style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
                   </div>
                   <hr>
-                  <h1 id="top">
+                  <h1 id="top"></h1>
                   <div class="Games" id="Games">
-                    <p>My entire Website got corrupted, I have to reupload it file by file. Most games won't work, please be patient as this may take a while to reupload. FRICK YOU CPANEL!</p>>
                     <h2><a href="../games/all.html">Collapse All</a></h2>
                     <br>
                     <p>Go to:(NEW!)</p>
-                    <h4><a href="../games/index.html#cp">Club Penguin</a></h4>
-                    <h4><a href="../games/index.html#html">Html and other non Flash Games</a></h4>
+                    <h4><a href="#cp">Club Penguin</a></h4>
+                    <h4><a href="#html">Html and other non Flash Games</a></h4>
                     <ul>
-                      <h5><a href="../games/index.html#fnf">Friday Night Funkin'</a></h5>
+                      <h5><a href="#fnf">Friday Night Funkin'</a></h5>
                     </ul>
                     <ul>
-                      <h5><a href="../games/index.html#simp">Easier to Learn Games</a></h5>
+                      <h5><a href="#simp">Easier to Learn Games</a></h5>
                     </ul>
                     <ul>
-                      <h5><a href="../games/index.html#ut">undertale related games</a></h5>
+                      <h5><a href="#ut">undertale related games</a></h5>
                     </ul>
-                    <h4><a href="../games/index.html#ut">Arcade Games</a></h4>
-                    <h4><a href="../games/index.html#flash">Flash Games</a></h4>
-                    <h4><a href="../games/index.html#emulation">Emulation</a></h3></h1><h4>
+                    <h4><a href="#arcade">Arcade Games</a></h4>
+                    <h4><a href="#flash">Flash Games</a></h4>
+                    <h4><a href="#emulation">Emulation</a></h3></h1><h4>
                       <h2>Music</h2>
                       <ul>
                           <li><a href="../games/Imabanana/">I'm a banana</a></li>
-                          <li><a href="../games/justabitcrazy/">Just a bit crazy (Eddsworld)</a></li>
+                          <li><a href="../games/justabitcrazy/">i'm going Just a bit crazy that my WEBSITE GOT DELETED (Eddsworld)</a></li>
                           <li><a href="../games/silent scream/">Silent Scream - Slayer (a SILENT SCREAM to the loss of EVERY FILE ON MY SITE!)</a></li>
 
                       </ul>
@@ -168,7 +167,6 @@
                           <li><a href="../games/astro/">Astro Barrier</a></li>
                           <li><a href="../games/towerdefence/">Tower Defence</a></li>
                           <li><a href="../games/hydro/">Hydro Hopper</a></li>
-                          <li><a href="../games/gridcommand/">Grid Command</a></li>
                           <li><a href="../games/mixmaster/">DJ3K</a></li>
                           <li><a href="../games/icejam/">Ice Jam</a></li>
                           <li><a href="../games/fish/">Ice Fishing</a></li>
@@ -229,7 +227,7 @@
                       <h1 id="arcade"></h1>
                       <h2>Arcade Games</h2>
                       <ul>
-                          <li><a href="../games/mari0/">mari0 (broken link)</a></li>
+                          <li><a href="../games/mari0/">mari0 (NOW WORKS!!)</a></li>
                           <li><a href="../games/zeldaseedsofdarkness/">Zelda seeds of darkness</a></li>
                           <li><a href="../games/megamanprojectx/">Megaman Project X</a></li>
                           <li><a href="../games/ultimateflashsonic/">Ultimate Flash Sonic</a></li>
@@ -252,6 +250,7 @@
                         <h2>Flash Games</h2>
                         <ul>
                           <li><a href="../games/ngr/">Newgrounds Rumble</a></li>
+                          <li><a href="../games/gridcommand/">Grid Command</a></li>
                           <li><a href="../games/lineriders/">Line Riders</a></li>
                           <ul>
                               <li><a href="../games/lineriders/linerider/">Line Rider</a></li>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#570001" />
+    <meta name="msapplication-TileColor" content="#570001" />
+    <meta name="theme-color" content="#570001" />
+    <meta
+      name="description"
+      content="Play UNO online for free with friends or on your own against bots! Play with 2 to 4 friends online for free in Scuffed Uno, the multiplayer card game inspired by the very fun classic card game UNO. Create a private room to enjoy with your friends or battle it out with players from around the world in a public room!"
+    />
+    <meta property="og:title" content="Scuffed Uno - Play UNO online with friends" />
+    <meta
+      property="og:description"
+      content="Play UNO online for free with friends or on your own against bots. Create a private room or battle it out with players from around the world in a public room!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scuffeduno.online/" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/freddie-nelson/uno/main/screenshot.png"
+    />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://scuffeduno.online/"
+        },
+        "name": "Scuffed Uno",
+        "description": "Play UNO online for free with friends or on your own against bots! Play with 2 to 4 friends online for free in Scuffed Uno, the multiplayer card game inspired by the very fun classic card game UNO. Create a private room to enjoy with your friends or battle it out with players from around the world in a public room!",
+        "url": "https://scuffeduno.online/",
+        "genre": "multiplayer",
+        "accessibilityControl": ["fullMouseControl", "touch"],
+        "operatingSystem": "web",
+        "icon": "https://scuffeduno.online/favicon.png",
+        "image": ["https://raw.githubusercontent.com/freddie-nelson/uno/main/screenshot.png"],
+        "author": {
+          "@type": "Person",
+          "name": "Freddie Nelson",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://freddienelson.co.uk/favicon.png"
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+
+    <script type="text/javascript">
+      (function(g, a, m, e, A, d, s) {
+        g[A] =
+          g[A] ||
+          function() {
+            (g[A].s = g[A].s || []).push(arguments);
+          };
+        g[A].l = 1 * new Date();
+        (d = a.createElement("script")),
+          (s = a.getElementsByTagName("script")[0]),
+          (d.async = 1),
+          (d.src =
+            e +
+            "?objid=" +
+            m +
+            "&jsdate=" +
+            +new Date() +
+            "&lang=" +
+            g.navigator.language +
+            "&rfunc=" +
+            A +
+            "&fromhost=" +
+            g.location.hostname +
+            "&refr=" +
+            encodeURIComponent(a.referrer) +
+            "&fromurl=" +
+            encodeURIComponent(g.location.href) +
+            ""),
+          s.parentNode.insertBefore(d, s);
+      })(window, document, "gameadsbanner", "https://n.gameads.io/getcode", "GameAdsRenew");
+    </script>
+
+    <script>
+      function gameadsClicked() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.countapi.xyz/hit/scuffeduno.online/gameadsclicks");
+        xhr.responseType = "json";
+        xhr.onload = function() {};
+        xhr.send();
+      }
+
+      window.gameadsClicked = gameadsClicked;
+    </script>
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

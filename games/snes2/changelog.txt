@@ -1,0 +1,18 @@
+version 0.0.6
+- added basic joystick support (tested on logitech F310)
+- fix select key
+
+version 0.0.5
+- fix typo with arm nexe path in manifest
+
+version 0.0.4
+- enable persistent game save storage
+
+version 0.0.3
+- add sfc file_handler
+
+version 0.0.2
+- add file_handlers
+
+version 0.0.1
+- initial release

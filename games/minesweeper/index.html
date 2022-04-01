@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head>
+	<title>Config the Minesweeper</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-US" />
+	<meta content="all" name="robots" />
+	<meta name="title" content="" />
+	<meta name="author" content="VincentChen" />
+	<meta name="subject" content="" />
+	<meta name="language" content="en-US" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="" type="image/x-icon" />
+	<link rel="shortcut icon" href="" type="image/x-icon" /> 
+	<link rel="stylesheet" href="Mine.Style.css" type="text/css" media="all"  />
+	<script language="JavaScript" type="text/javascript">
+	<!--
+		function CheckConfigAndStart()
+		{
+			var row = Math.abs(document.frmConfig.row_count.value);
+			var col = Math.abs(document.frmConfig.col_count.value);
+			var num = Math.abs(document.frmConfig.mine_num.value);
+			if(row > 50)
+			{
+				alert("Too many rows!");
+				document.frmConfig.row_count.value = "50";
+				return false;
+			}
+			if(col > 50)
+			{
+				alert("Too many columns!");
+				document.frmConfig.col_count.value = "50";
+				return false;
+			}
+			if(row < 8)
+			{
+				alert("Too few rows!");
+				document.frmConfig.row_count.value = "8";
+				return false;
+			}
+			if(col < 8)
+			{
+				alert("Too few columns!");
+				document.frmConfig.col_count.value = "8";
+				return false;
+			}
+			if(num > (row*col/2))
+			{
+				alert("Too many mines!");
+				document.frmConfig.mine_num.value = "10";
+				return false;
+			}
+			if(num < 8)
+			{
+				alert("Too few mines!");
+				document.frmConfig.mine_num.value = "10";
+				return false;
+			}
+			var urlStr = "Mine.View.html?row=" + row + "\&col=" + col + "\&mine=" + num;
+			//document.all.frmConfig.action = urlStr;
+			//document.all.frmConfig.submit();
+			location.href = urlStr;
+			return true;
+		}
+	//-->
+	</script>
+</head>
+<body>
+<form method="post" action="" name="frmConfig">
+<table>
+<tr>
+	<td colspan="2">Please Config The Game</td>
+</tr>
+<tr>
+	<td>Rows(>=8):</td>
+	<td><input type="text" name="row_count" value="8" /></td>
+</tr>
+<tr>
+	<td>Columns(>=8):</td>
+	<td><input type="text" name="col_count" value="8" /></td>
+</tr>
+<tr>
+	<td>Mines(>=10):</td>
+	<td><input type="text" name="mine_num" value="10" /></td>
+</tr>
+<tr>
+	<td><input type="button" value="Start" onclick="return CheckConfigAndStart();" /></td>
+	<td><input type="reset" value="Clear" /></td>
+</tr>
+</table>
+</form>
+<p>
+&copy;2012 <a href="vincentchen.me">vincentchen.me</a> All Right Reserved.
+</p>
+</body>
+</html>

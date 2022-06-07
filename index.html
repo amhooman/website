@@ -19,14 +19,14 @@
     <div class="container">
     <header>
       <div>
-        <span class="logo-content">
-          <a href="index.html" class= "main-logo">Slash's</a>
-          <span class="page-title">Page</span>
+        <iframe src="http://swordslasher.com/images/slashflash_logo.svg" width="100%" height="300px" frameBorder="0"></iframe></a>
         </span>
       </div>
     </header>
 
-
+    <script>
+      console.log("Hello! How are you doing person in the console? It is me, Slash! congrats on finding this easter egg!")
+    </script>
 <section>
 
   <nav>
@@ -41,6 +41,8 @@
     <a href="chat/index.html" class="nav-home"> chat </a>
 
     <a href="more.html" class="nav-home"> more </a>
+
+    <a href="games/dark.html" class="nav-my-photoshop"> Dark Mode </a>
   </nav>
 
 
@@ -49,16 +51,217 @@
                   <p> Here we have <a href="my-videos.html" class="e">My Youtube Videos</a>, <a href="my-flipnotes.html" class="e">flipnotes</a>, <a href="chat/index.html" class="e">a chat page</a>, and most of all, <a href="games/index.html" class="e">Games!</a></p>
                   <br>
 </h3>
-                <h2>news:</h2>
+<br>
+<img src="images/mysitebanner.png" alt="my site banner">
+<br>
+<br>
+                
+                <h2>fun stuff I've been doing lately:</h2>
+                
+                <h3>I just finished Kirby and the Forgotten land! It was an amazing game!</h3>
+                <li><a href="funstuff.html">Click here to see more fun stuff I've been doing!</a></li>
                 <br>
-              <p>This is the version of the site where i test random stuff, and it has some beta games not on the main site, but some games from the main site aren't here. Please check out my main site below:</p>
-               <a href="http://swordslasher.com" class="e">My main website</a>
                 <br>
-                <p>Fireboy and watergirl are here (keep checking on main site to see when it is there)</p>
+                <h2>changelog:</h2>
+
+                <h3>5/23/22: version 6.8:added sonic 2</h3></h3></h3>
+                <li><a href="changelog.html">Click here to see full changelog</a></li>
+                <br>
+                <br>
+                <p>Btw, The home page is still under construction</p>
                 <br>
                 <h5><p>By the way, credit to <a href="https://boredht.ml" class="e">https://boredht.ml</a> and <a href="https://mesacomplex.tk" class="e">https://mesacomplex.tk</a> for some code! </p></h5>
+                <p>My chat page:</p>
+                      
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+                <script type="text/javascript">
+                $(function(){
+                    $('#button').click(function(){ 
+                        if(!$('#iframe').length) {
+                                $('#iframeHolder').html(' <iframe src="../chat2/index.html" width="100%" height="790px" frameBorder="0" style="border: 0;"></iframe></a>');
+                        }
+                    });   
+                });
+                </script>
+                 
+                <button id="button">Load Chat Page</button>
+                <div id="iframeHolder"></div>
+                <p>calculator so that school can't see it:</p>
+                <!-- This Script is from www.javascriptbestcodes.com, Provided by: Web Smile -->
+
+
+  <FORM name="Keypad" action="">
+  <TABLE>
+  <B>
+  <TABLE border=2 width=50 height=60 cellpadding=1 cellspacing=5>
+  <TR>
+  <TD colspan=3 align=middle>
+  <input name="ReadOut" type="Text" size=24 value="0" width=100%>
+  </TD>
+  <TD
+  </TD>
+  <TD>
+  <input name="btnClear" type="Button" value="  C  " onclick="Clear()">
+  </TD>
+  <TD><input name="btnClearEntry" type="Button" value="  CE " onclick="ClearEntry()">
+  </TD>
+  </TR>
+  <TR>
+  <TD>
+  <input name="btnSeven" type="Button" value="  7  " onclick="NumPressed(7)">
+  </TD>
+  <TD>
+  <input name="btnEight" type="Button" value="  8  " onclick="NumPressed(8)">
+  </TD>
+  <TD>
+  <input name="btnNine" type="Button" value="  9  " onclick="NumPressed(9)">
+  </TD>
+  <TD>
+  </TD>
+  <TD>
+  <input name="btnNeg" type="Button" value=" +/- " onclick="Neg()">
+  </TD>
+  <TD>
+  <input name="btnPercent" type="Button" value="  % " onclick="Percent()">
+  </TD>
+  </TR>
+  <TR>
+  <TD>
+  <input name="btnFour" type="Button" value="  4  " onclick="NumPressed(4)">
+  </TD>
+  <TD>
+  <input name="btnFive" type="Button" value="  5  " onclick="NumPressed(5)">
+  </TD>
+  <TD>
+  <input name="btnSix" type="Button" value="  6  " onclick="NumPressed(6)">
+  </TD>
+  <TD>
+  </TD>
+  <TD align=middle><input name="btnPlus" type="Button" value="  +  " onclick="Operation('+')">
+  </TD>
+  <TD align=middle><input name="btnMinus" type="Button" value="   -   " onclick="Operation('-')">
+  </TD>
+  </TR>
+  <TR>
+  <TD>
+  <input name="btnOne" type="Button" value="  1  " onclick="NumPressed(1)">
+  </TD>
+  <TD>
+  <input name="btnTwo" type="Button" value="  2  " onclick="NumPressed(2)">
+  </TD>
+  <TD>
+  <input name="btnThree" type="Button" value="  3  " onclick="NumPressed(3)">
+  </TD>
+  <TD>
+  </TD>
+  <TD align=middle><input name="btnMultiply" type="Button" value="  X  " onclick="Operation('*')">
+  </TD>
+  <TD align=middle><input name="btnDivide" type="Button" value="   /   " onclick="Operation('/')">
+  </TD>
+  </TR>
+  <TR>
+  <TD>
+  <input name="btnZero" type="Button" value="  0  " onclick="NumPressed(0)">
+  </TD>
+  <TD>
+  <input name="btnDecimal" type="Button" value="   .  " onclick="Decimal()">
+  </TD>
+  <TD colspan=3>
+  </TD>
+  <TD>
+  <input name="btnEquals" type="Button" value="  =  " onclick="Operation('=')">
+  </TD>
+  </TR>
+  </TABLE>
+  </TABLE>
+  </B>
+  </FORM>
+  </CENTER>
+  <font face="Verdana, Arial, Helvetica" size=2>
+  <SCRIPT LANGUAGE="JavaScript">
+  <!-- Begin
+  var FKeyPad = document.Keypad;
+  var Accumulate = 0;
+  var FlagNewNum = false;
+  var PendingOp = "";
+  function NumPressed (Num) {
+  if (FlagNewNum) {
+  FKeyPad.ReadOut.value  = Num;
+  FlagNewNum = false;
+     }
+  else {
+  if (FKeyPad.ReadOut.value == "0")
+  FKeyPad.ReadOut.value = Num;
+  else
+  FKeyPad.ReadOut.value += Num;
+     }
+  }
+  function Operation (Op) {
+  var Readout = FKeyPad.ReadOut.value;
+  if (FlagNewNum && PendingOp != "=");
+  else
+  {
+  FlagNewNum = true;
+  if ( '+' == PendingOp )
+  Accumulate += parseFloat(Readout);
+  else if ( '-' == PendingOp )
+  Accumulate -= parseFloat(Readout);
+  else if ( '/' == PendingOp )
+  Accumulate /= parseFloat(Readout);
+  else if ( '*' == PendingOp )
+  Accumulate *= parseFloat(Readout);
+  else
+  Accumulate = parseFloat(Readout);
+  FKeyPad.ReadOut.value = Accumulate;
+  PendingOp = Op;
+     }
+  }
+  function Decimal () {
+  var curReadOut = FKeyPad.ReadOut.value;
+  if (FlagNewNum) {
+  curReadOut = "0.";
+  FlagNewNum = false;
+     }
+  else
+  {
+  if (curReadOut.indexOf(".") == -1)
+  curReadOut += ".";
+     }
+  FKeyPad.ReadOut.value = curReadOut;
+  }
+  function ClearEntry () {
+  FKeyPad.ReadOut.value = "0";
+  FlagNewNum = true;
+  }
+  function Clear () {
+  Accumulate = 0;
+  PendingOp = "";
+  ClearEntry();
+  }
+  function Neg () {
+  FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
+  }
+  function Percent () {
+  FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
+  }
+  // End -->
+  </SCRIPT>
+  
+
+                
+                 
+
+               
+            </div>
+            <hr>
+            
+            </script>
+                
           </div>
         </section>
+
+
+
 
       <footer>
         <div>

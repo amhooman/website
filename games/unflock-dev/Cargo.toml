@@ -1,0 +1,32 @@
+[package]
+name = "unflock"
+version = "1.7.0"
+authors = ["Manfred Kroehnert <mkroehnert@users.sourceforge.net>"]
+edition = "2021"
+description = "Puzzle game where you rearrange a randomly generated graph so that its lines do not intersect"
+readme = "README.md"
+repository = "https://gitlab.com/central-gaming-system/unflock"
+license-file = "LICENSE.txt"
+keywords = ["bevy", "game", "puzzle", "html5"]
+categories = ["games"]
+build = "build.rs"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.6", default-features = false, features = ["bevy_winit", "render", "png", "x11"] }
+rand = "0.8.3"
+itertools = "0.10.0"
+
+rbtag = "0.3.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+bevy_web_fullscreen = {version = "0.2.1", git = "https://github.com/ostwilkens/bevy_web_fullscreen.git", rev="08f3fc5"}
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = true
+opt-level = 'z'

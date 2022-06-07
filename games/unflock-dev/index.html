@@ -1,0 +1,68 @@
+<!-- SPDX-License-Identifier: MIT -->
+<!-- UnFlock Authors: see AUTHORS.txt -->
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+        <style>
+          body {
+              margin: 0;
+              width: 100vw;
+              height: 100vh;
+              overflow: hidden;
+              display: flex;
+          }
+          canvas {
+              background-color: white;
+              width: 100vw;
+              height: 100vh;
+              overflow: hidden;
+              touch-action: none;
+          }
+        </style>
+        <link rel="icon" type="image/png" sizes="512x512" href="/assets/sprites/unflock-logo-512.png"/>
+        <link rel="icon" type="image/png" sizes="196x196" href="/assets/sprites/unflock-logo-196.png"/>
+        <link rel="icon" type="image/png" sizes="160x160" href="/assets/sprites/unflock-logo-160.png"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="/assets/sprites/unflock-logo-96.png"/>
+        <link rel="icon" type="image/png" sizes="64x64" href="/assets/sprites/unflock-logo-64.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/sprites/unflock-logo-32.png"/>
+        <title>UnFlock</title>
+    </head>
+
+    <body>
+      <canvas id="unflock_canvas"/>
+    </body>
+
+    <noscript>
+        <h1>This game requires Javascript to run</h1>
+    </noscript>
+
+    <script>
+    // taken from
+    // https://stackoverflow.com/questions/47879864/how-can-i-check-if-a-browser-supports-webassembly/47880734#47880734
+    const is_wasm_supported = (() => {
+        try {
+            if (typeof WebAssembly === "object"
+                && typeof WebAssembly.instantiate === "function") {
+                const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00))
+                if (module instanceof WebAssembly.Module) {
+                    return new WebAssembly.Instance(module) instanceof WebAssembly.Instance
+                }
+            }
+        } catch (e) {
+        }
+        return false;
+    })();
+
+    if (!is_wasm_supported) {
+        document.write("<h1>This game requires WebAssembly to run, but your browser does not support it")
+    } else {
+        console.log("WebAssembly supported")
+    }
+    </script>
+
+    <script type="module">
+        import init from './target/wasm.js'
+        init()
+    </script>
+</html>

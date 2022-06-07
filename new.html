@@ -1,0 +1,201 @@
+
+  
+<!DOCTYPE HTML>
+<html lang="en-AU">
+
+<head>
+	<meta charset="utf-8">
+	<title>New Tab</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" rel="stylesheet">
+	<style type="text/css"><!--
+#menuv {
+ position:relative;
+ padding:2px;
+}
+
+  /* Properties for horizontal menu */
+#menuv li {
+ float:left;
+ margin:1px 8px;
+ border:1px solid blue;
+ background-color:#daedfe;
+ padding:1px 2px;
+ list-style-type:none;
+ font-weight:600;
+ text-align:center;
+ text-decoration:nderline;
+}
+#menuv .olishow {
+ background-color: yellow;
+}
+
+  /* Properties for vertical menu */
+#menuv .oli ul, #menuv .olishow ul {
+ display:none;
+ position:absolute;
+ margin:1px auto 1px -8px;
+ background-color:#f0f1fe;
+ border:1px dashed blue;
+ padding:1px;
+}
+#menuv li ul li {
+ position:relative;
+ clear:both;
+ width:99%;
+ margin:1px 0;
+ border:none;
+ background-color:#edfeed;
+ padding:1px;
+}
+#menuv li:hover ul, #menuv .olishow ul {
+ display:block;
+}
+
+  /* Links in sub-menu */
+#menuv ul li a {
+ display:block;
+ margin:0;
+ font-weight:normal;
+ padding:1px;
+}
+#menuv ul li a:hover, #menuv ul .vlishow a {
+ background-color:#fefefe;
+ text-decoration:none;
+ font-style:oblique;
+ color:#fb0001;
+}
+--></style>
+</head>
+
+<body>
+	<!-- Horisontal-Vertical Menu, https://coursesweb.net/ -->
+<ul id="menuv">
+ <li class="oli"><a href="http://swordslasher.com" title="Home">Home</a></li>
+ <li class="oli">Games
+  <ul>
+   <li><a href="http://swordslasher.com/games" title="Border properties">All Games</a></li>
+   <li><a href="http://swordslasher.com/games/dark.html" title="opacity">All Games(dark mode)</a></li>
+   <li><a href="https://amhooman.github.io/fireboywatergirl/game.html" title="opacity">Fireboy and Watergirl</a></li>
+
+  </ul>
+ </li>
+ <li class="oli">add later
+  <ul>
+   <li><a href="https://coursesweb.net/html/html5-quick-tutorial_t" title="HTML5 Quick Tutorial">HTML5 Quick Tutorial</a></li>
+   <li><a href="https://coursesweb.net/html/html5-canvas_t" title="HTML5 canvas Tutorial">HTML5 canvas Tutorial</a></li>
+   <li><a href="https://coursesweb.net/html/html5-new-tags_t" title="HTML5 New Tags">HTML5 New Tags</a></li>
+  </ul>
+ </li>
+ <li class="oli"><a href="https://coursesweb.net/ex/contact" title="Contact">not working</a></li>
+</ul>
+
+<script type="text/javascript"><!--
+// gets all <li> within #menu element
+var menuli = document.getElementById('menuv').getElementsByTagName('li');
+var nrmenuli = menuli.length;
+var oli = [];        // store horisontal menu items
+var crt_oli;         // store current horisontal element
+var vli = [];        // store vertical menu list in within current horisontal element
+var nroli = 0;       // number of horisontal menu items
+var nrvli = 0;       // number of vertical menu lists
+var url_adr = '';    // store the URL address added in the anchor <a> of current navigated list
+
+// traverse $menuli to add the horisontal menus in $oli
+for(var i=0; i<nrmenuli; i++) {
+  if(menuli[i].className == 'oli') {
+    oli.push(menuli[i]);
+  }
+}
+
+var ih = -1;     // to store the index of current horizontal item in $oli
+var iv = -1;    // to store the index of current vertical item in $vli
+
+// accessed on press the Left /Right arrow keys
+// show current horisontal menu
+function showOli(index) {
+  iv = -1;       // reset imdex of vertical menu when moves to other horisontal menu
+  url_adr = '';     // empty this variable
+
+  for(var i=0; i<nroli; i++) {
+    oli[i].className = 'oli';
+  }
+  crt_oli = oli[index];     // store current horisontal element
+  crt_oli.className = 'olishow';      // set class="olishow"
+
+  // if current horisontal menu contains vertical menu, store it in $vli, and display it
+  if(crt_oli.getElementsByTagName('ul').length > 0 && crt_oli.getElementsByTagName('ul')[0].getElementsByTagName('li')) {
+    vli = crt_oli.getElementsByTagName('ul')[0].getElementsByTagName('li');
+    nrvli = vli.length;
+    showVli();     // calls showVli() to set class="vli" to all list in its vertical menu
+  }
+  else {
+    // if current horisontal menu no has vertical list
+    // if contains a link, calls the function setUrlAdr() to add its "href" value in $url_adr
+    if(crt_oli.getElementsByTagName('a').length > 0) setUrlAdr(crt_oli.getElementsByTagName('a')[0]);
+    vli = [];        // empties $vli
+    nrvli = 0;
+  }
+}
+
+// accessed on press the Up /Down arrow keys
+// show current vertical menu
+function showVli(index) {
+  url_adr = '';       // empties this variable
+  if(nrvli > 0) {
+    for(var i=0; i<nrvli; i++) {
+      vli[i].className = 'vli';
+    }
+    if(index >= 0) {
+      vli[index].className = 'vlishow';
+      
+    // if contains a link, calls the function setUrlAdr() to add its "href" value in $url_adr
+    if(vli[index].getElementsByTagName('a').length > 0) setUrlAdr(vli[index].getElementsByTagName('a')[0]);
+    }
+  }
+}
+
+// adds in $url_adr the "href" value of the anchor element <a> passed in "link" parameter
+function setUrlAdr(link) {
+  url_adr = link.href;
+}
+
+// function with code to get the pressed keyboard key
+function KeyCheck(e){
+ // https://coursesweb.net/
+  nroli = oli.length;
+   var keyid = (window.event) ? event.keyCode : e.keyCode;       // get the code of the key pressed
+
+   // modify the index of horisontal /vertical item, calls the indicated function according to pressed key
+   switch(keyid) {
+      // Left
+      case 37:
+        ih--;
+        if(ih < 0) ih = 0;
+        showOli(ih);
+        break;
+      // Up
+      case 38:
+        iv--;
+        if(iv < 0) iv = 0;
+        showVli(iv);
+        break;
+      // Right
+      case 39:
+        ih++;
+        if(ih >= nroli) ih = 0;
+        showOli(ih);
+        break;
+      // Down
+      case 40:
+        iv++;
+        if(iv >= nrvli) iv = 0;
+        showVli(iv);
+      break;
+      // Enter (opens the link)
+      case 13:
+        if(url_adr != '') window.location = url_adr;
+        break;
+   }
+}
